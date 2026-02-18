@@ -73,7 +73,7 @@ const Index = () => {
               <br />
               <RotatingWord words={rotatingWords} />
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg opacity-0 animate-fade-in-delay">
+            <p className="text-lg md:text-xl text-muted-foreground leading-snug max-w-lg opacity-0 animate-fade-in-delay">
               {t("hero.subhead")}
             </p>
           </div>
