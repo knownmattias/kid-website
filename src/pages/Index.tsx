@@ -325,8 +325,10 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Stat cards — 2x2 grid */}
-          <div className="grid sm:grid-cols-2 gap-5">
+          {/* Stat cards — 2x2 grid, right-aligned */}
+          <div className="grid md:grid-cols-2">
+            <div className="hidden md:block" />
+            <div className="grid sm:grid-cols-2 gap-5">
             {(lang === "sv"
               ? [
                   { stat: "100%", desc: "GDPR-efterlevnad i varje steg av processen." },
@@ -346,6 +348,7 @@ const Index = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </RevealSection>
