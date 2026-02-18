@@ -227,18 +227,16 @@ const Index = () => {
               {t("insights.viewAll")} →
             </Link>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-5">
             {posts.map((post) => (
               <Link
                 key={post.slug}
                 to={`/insights/${post.slug}`}
-                className="group bg-background border rounded-xl p-7 space-y-4"
+                className="group space-y-5"
               >
-                <div className="w-full h-2 rounded-full bg-primary/8 group-hover:bg-primary/15 transition-colors" />
-                <span className="text-xs text-muted-foreground uppercase tracking-wider font-normal">{post.category}</span>
-                <h3 className="group-hover:text-primary transition-colors">{post.title}</h3>
+                <div className="w-full aspect-[4/5] rounded-xl bg-accent/60 overflow-hidden" />
+                <h3 className="text-lg font-display leading-snug group-hover:text-primary transition-colors">{post.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{post.excerpt}</p>
-                <span className="text-xs text-muted-foreground">{post.date}</span>
               </Link>
             ))}
           </div>
