@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { HeroGeometric } from "@/components/GeometricMotif";
-import { DemoBand } from "@/components/DemoForm";
+
 import { ChevronDown } from "lucide-react";
 import Pill from "@/components/Pill";
 import { useSectionReveal } from "@/hooks/use-section-reveal";
@@ -349,9 +349,6 @@ const Index = () => {
           </div>
         </div>
       </RevealSection>
-
-      {/* Demo CTA band */}
-      <DemoBand />
     </>
   );
 };
