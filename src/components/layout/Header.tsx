@@ -52,12 +52,12 @@ const Header = () => {
                 </Link>
                 {industriesOpen && (
                   <div className="absolute top-full left-0 pt-2 z-50">
-                    <div className="bg-background border rounded-xl shadow-lg py-2 min-w-[180px]">
+                    <div className="bg-background border rounded-xl shadow-sm py-2 min-w-[180px]">
                       {industryKeys.map((key) => (
                         <Link
                           key={key}
                           to={`/industries/${key}`}
-                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         >
                           {t(`industries.${key}.name`)}
                         </Link>
