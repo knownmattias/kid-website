@@ -64,8 +64,8 @@ const Index = () => {
   return (
     <>
       {/* Hero — 100svh */}
-      <section className="min-h-[100svh] relative flex flex-col overflow-hidden pt-12 pb-16">
-        <div className="container relative z-10 flex flex-col flex-1 justify-between">
+      <section className="min-h-[100svh] relative flex flex-col overflow-hidden pt-12">
+        <div className="container relative z-10">
           {/* Top left — headline */}
           <div className="space-y-6 max-w-2xl mb-12 opacity-0 animate-fade-in">
             <h1>
