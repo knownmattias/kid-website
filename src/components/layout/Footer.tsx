@@ -60,7 +60,10 @@ const Footer = () => {
 
         {/* Bottom row: address + legal */}
         <div className="flex flex-col md:flex-row justify-between items-end mt-24 gap-8">
-          <div className="text-xs text-muted-foreground space-y-1">
+          <Link to="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+            Legal
+          </Link>
+          <div className="text-xs text-muted-foreground space-y-1 text-right">
             <p>KnownID AB,</p>
             <p>Artillerigatan 15,</p>
             <p>114 45 Stockholm,</p>
@@ -71,9 +74,6 @@ const Footer = () => {
               </a>
             </p>
           </div>
-          <Link to="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-            Legal
-          </Link>
         </div>
       </div>
     </footer>
