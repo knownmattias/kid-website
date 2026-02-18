@@ -183,9 +183,7 @@ const Index = () => {
             <div className="grid md:grid-cols-3 divide-x divide-border">
               {[0, 1, 2].map((i) => (
                 <div key={i} className="p-8 space-y-4">
-                  <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
-                    {labels[i]}
-                  </span>
+                  <Pill>{labels[i]}</Pill>
                   <h3>{valueCards[i]?.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[i]?.desc}</p>
                 </div>
