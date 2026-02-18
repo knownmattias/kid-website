@@ -309,6 +309,47 @@ const Index = () => {
         </div>
       </RevealSection>
 
+      {/* Privacy & Security stats */}
+      <RevealSection className="py-24 md:py-32">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-20 mb-14">
+            {/* Left — pill */}
+            <div>
+              <Pill>{lang === "sv" ? "Säkerhet & integritet" : "Security & privacy"}</Pill>
+            </div>
+            {/* Right — statement */}
+            <p className="text-xl md:text-2xl font-display leading-snug">
+              {lang === "sv"
+                ? "Din data hanteras med högsta säkerhet. Krypterad lagring, strikt åtkomstkontroll och fullständig GDPR-efterlevnad — så att du kan fokusera på affären."
+                : "Your data is handled with the highest security. Encrypted storage, strict access control, and full GDPR compliance — so you can focus on business."}
+            </p>
+          </div>
+
+          {/* Stat cards — 2x2 grid */}
+          <div className="grid sm:grid-cols-2 gap-5">
+            {(lang === "sv"
+              ? [
+                  { stat: "100%", desc: "GDPR-efterlevnad i varje steg av processen." },
+                  { stat: "AES-256", desc: "Kryptering av all känslig data, i vila och under överföring." },
+                  { stat: "SOC 2", desc: "Säkerhetsstandarder som uppfyller de strängaste kraven." },
+                  { stat: "0", desc: "Tredjeparter med tillgång till dina kunders personuppgifter." },
+                ]
+              : [
+                  { stat: "100%", desc: "GDPR compliance at every step of the process." },
+                  { stat: "AES-256", desc: "Encryption of all sensitive data, at rest and in transit." },
+                  { stat: "SOC 2", desc: "Security standards meeting the strictest requirements." },
+                  { stat: "0", desc: "Third parties with access to your clients' personal data." },
+                ]
+            ).map((item, i) => (
+              <div key={i} className="border border-border rounded-xl p-8 md:p-10 space-y-3">
+                <span className="text-3xl md:text-4xl font-display">{item.stat}</span>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </RevealSection>
+
       {/* Demo CTA band */}
       <DemoBand />
     </>
