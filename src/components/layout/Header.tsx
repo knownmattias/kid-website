@@ -25,7 +25,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-xl border-b">
+    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-xl">
       <div className="container flex items-center h-16">
         <Link to="/" className="text-lg font-display font-normal tracking-tight" onClick={() => setMobileOpen(false)}>
           KnownID
