@@ -210,16 +210,11 @@ const Index = () => {
               {lang === "sv" ? "Så funkar det" : "How it works"}
             </span>
             <h2 className="text-2xl md:text-3xl font-display leading-tight">{t("howItWorks.title")}</h2>
-            <div className="space-y-6 pt-2">
+            <div className="space-y-5 pt-2">
               {steps.map((step, i) => (
-                <div key={i} className="flex gap-4">
-                  <div className="w-8 h-8 shrink-0 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-display font-normal">
-                    {i + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-base font-display">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mt-1">{step.desc}</p>
-                  </div>
+                <div key={i}>
+                  <h3 className="text-base font-display">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
