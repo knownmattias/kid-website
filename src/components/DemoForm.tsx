@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
+import { useSectionReveal } from "@/hooks/use-section-reveal";
 
 const DemoForm = () => {
   const { t } = useLanguage();
@@ -17,8 +18,8 @@ const DemoForm = () => {
 
   if (submitted) {
     return (
-      <div className="text-center py-4">
-        <p className="text-base font-normal text-foreground">
+      <div className="py-4">
+        <p className="text-base font-medium text-foreground">
           {t("nav.bookDemo")} ✓
         </p>
         <p className="text-sm text-muted-foreground mt-1">
@@ -29,14 +30,14 @@ const DemoForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg">
+    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl">
       <Input
         type="text"
         placeholder={t("demo.name")}
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
-        className="bg-background"
+        className="bg-background rounded-xl"
       />
       <Input
         type="email"
@@ -44,7 +45,7 @@ const DemoForm = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="bg-background"
+        className="bg-background rounded-xl"
       />
       <Button type="submit" variant="hero" className="shrink-0">
         {t("demo.cta")}
@@ -55,18 +56,17 @@ const DemoForm = () => {
 
 export const DemoBand = () => {
   const { t } = useLanguage();
+  const ref = useSectionReveal();
 
   return (
-    <section id="demo" className="bg-muted py-20">
-      <div className="container text-center">
-        <h2 className="text-2xl md:text-3xl font-normal mb-3">{t("demo.title")}</h2>
-        <p className="text-muted-foreground mb-8 max-w-md mx-auto">{t("demo.subtitle")}</p>
-        <div className="flex justify-center">
-          <DemoForm />
-        </div>
-        <p className="text-xs text-muted-foreground mt-4">
+    <section id="demo" ref={ref} className="section-reveal bg-foreground text-background py-24">
+      <div className="container max-w-3xl">
+        <h2 className="text-background mb-3">{t("demo.title")}</h2>
+        <p className="text-background/60 mb-10 text-lg">{t("demo.subtitle")}</p>
+        <DemoForm />
+        <p className="text-xs text-background/40 mt-6">
           {t("demo.privacy")}{" "}
-          <Link to="/privacy" className="underline hover:text-foreground transition-colors">
+          <Link to="/privacy" className="underline hover:text-background/70 transition-colors">
             {t("demo.privacyLink")}
           </Link>
           .
