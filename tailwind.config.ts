@@ -11,8 +11,8 @@ export default {
   prefix: "",
   theme: {
     container: {
-      center: false,
-      padding: "2rem",
+      center: true,
+      padding: "1rem",
     },
     extend: {
       fontFamily: {
