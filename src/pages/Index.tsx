@@ -154,41 +154,46 @@ const Index = () => {
       {/* Product value — asymmetric card layout */}
       <RevealSection id="product" className="py-24 md:py-32">
         <div className="container">
-          {/* Hero feature card */}
-          <div className="grid md:grid-cols-2 gap-0 bg-accent/30 rounded-xl overflow-hidden mb-8 border">
-            {/* Left — text */}
-            <div className="p-10 md:p-14 flex flex-col justify-center space-y-5">
-              <h2 className="text-2xl md:text-3xl font-display leading-tight">{valueCards[0]?.title}</h2>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-md">{valueCards[0]?.desc}</p>
-            </div>
-            {/* Right — visual placeholder */}
-            <div className="relative bg-accent/50 min-h-[280px] md:min-h-[360px] flex items-center justify-center">
-              <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-              <div className="relative bg-background border rounded-xl p-6 shadow-sm max-w-xs space-y-3">
-                <div className="flex items-center gap-2 text-sm font-display">
-                  <span>✦</span>
-                  <span>{lang === "sv" ? "Observationer & Anmärkningar" : "Observations & Remarks"}</span>
+          <div className="border rounded-xl overflow-hidden">
+            {/* Hero feature card */}
+            <div className="grid md:grid-cols-2 gap-0 bg-accent/30">
+              {/* Left — text */}
+              <div className="p-10 md:p-14 flex flex-col justify-start space-y-5">
+                <h2 className="text-2xl md:text-3xl font-display leading-tight">{valueCards[0]?.title}</h2>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-md">{valueCards[0]?.desc}</p>
+              </div>
+              {/* Right — visual placeholder */}
+              <div className="relative bg-accent/50 min-h-[280px] md:min-h-[360px] flex items-center justify-center">
+                <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+                <div className="relative bg-background border rounded-xl p-6 shadow-sm max-w-xs space-y-3">
+                  <div className="flex items-center gap-2 text-sm font-display">
+                    <span>✦</span>
+                    <span>{lang === "sv" ? "Observationer & Anmärkningar" : "Observations & Remarks"}</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {lang === "sv"
+                      ? "AI visar tillväxt med hög konfidens: jobbannonser, sökrankningar och varumärkessökningar ökar alla markant."
+                      : "AI shows high-confidence growth: job postings, search rankings, and brand searches are all increasing significantly."}
+                  </p>
                 </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {lang === "sv"
-                    ? "AI visar tillväxt med hög konfidens: jobbannonser, sökrankningar och varumärkessökningar ökar alla markant."
-                    : "AI shows high-confidence growth: job postings, search rankings, and brand searches are all increasing significantly."}
-                </p>
               </div>
             </div>
-          </div>
 
-          {/* Three equal cards below */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="bg-background border rounded-xl p-8 space-y-4">
-                <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
-                  {labels[i]}
-                </span>
-                <h3>{valueCards[i]?.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[i]?.desc}</p>
-              </div>
-            ))}
+            {/* Divider */}
+            <div className="w-full h-px bg-border" />
+
+            {/* Three equal cards below */}
+            <div className="grid md:grid-cols-3 divide-x divide-border">
+              {[0, 1, 2].map((i) => (
+                <div key={i} className="p-8 space-y-4">
+                  <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
+                    {labels[i]}
+                  </span>
+                  <h3>{valueCards[i]?.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[i]?.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </RevealSection>
