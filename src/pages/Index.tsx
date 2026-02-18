@@ -43,8 +43,8 @@ const RotatingWord = ({ words }: { words: string[] }) => {
 };
 
 const cardLabels = {
-  sv: ["KYC-flöde", "Formulär", "Screening", "Revisionsspår"],
-  en: ["KYC Flow", "Forms", "Screening", "Audit Trail"],
+  sv: ["KYC-flöde", "Formulär", "Screening"],
+  en: ["KYC Flow", "Forms", "Screening"],
 };
 
 const Index = () => {
@@ -154,46 +154,41 @@ const Index = () => {
       {/* Product value — asymmetric card layout */}
       <RevealSection id="product" className="py-24 md:py-32">
         <div className="container">
-          <div className="max-w-2xl mb-16">
-            <h2>{t("value.title")}</h2>
+          {/* Hero feature card */}
+          <div className="grid md:grid-cols-2 gap-0 bg-accent/30 rounded-xl overflow-hidden mb-8 border">
+            {/* Left — text */}
+            <div className="p-10 md:p-14 flex flex-col justify-center space-y-5">
+              <h2 className="text-2xl md:text-3xl font-display leading-tight">{valueCards[0]?.title}</h2>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-md">{valueCards[0]?.desc}</p>
+            </div>
+            {/* Right — visual placeholder */}
+            <div className="relative bg-accent/50 min-h-[280px] md:min-h-[360px] flex items-center justify-center">
+              <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+              <div className="relative bg-background border rounded-xl p-6 shadow-sm max-w-xs space-y-3">
+                <div className="flex items-center gap-2 text-sm font-display">
+                  <span>✦</span>
+                  <span>{lang === "sv" ? "Observationer & Anmärkningar" : "Observations & Remarks"}</span>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {lang === "sv"
+                    ? "AI visar tillväxt med hög konfidens: jobbannonser, sökrankningar och varumärkessökningar ökar alla markant."
+                    : "AI shows high-confidence growth: job postings, search rankings, and brand searches are all increasing significantly."}
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-4 gap-6">
-            {/* First card — double width */}
-            <div className="col-span-4 md:col-span-2 bg-background border rounded-xl p-8 space-y-4">
-              <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
-                {labels[0]}
-              </span>
-              <div className="w-full h-px bg-border" />
-              <h3>{valueCards[0]?.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[0]?.desc}</p>
-            </div>
-            {/* Second card — 25% */}
-            <div className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-8 space-y-4">
-              <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
-                {labels[1]}
-              </span>
-              <div className="w-full h-px bg-border" />
-              <h3>{valueCards[1]?.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[1]?.desc}</p>
-            </div>
-            {/* Third card — 25% */}
-            <div className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-8 space-y-4">
-              <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
-                {labels[2]}
-              </span>
-              <div className="w-full h-px bg-border" />
-              <h3>{valueCards[2]?.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[2]?.desc}</p>
-            </div>
-            {/* Fourth card — full width below on mobile, or could be additional row */}
-            <div className="col-span-4 md:col-span-2 bg-background border rounded-xl p-8 space-y-4">
-              <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
-                {labels[3]}
-              </span>
-              <div className="w-full h-px bg-border" />
-              <h3>{valueCards[3]?.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[3]?.desc}</p>
-            </div>
+
+          {/* Three equal cards below */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="bg-background border rounded-xl p-8 space-y-4">
+                <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
+                  {labels[i]}
+                </span>
+                <h3>{valueCards[i]?.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[i]?.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </RevealSection>
