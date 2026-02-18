@@ -26,15 +26,15 @@ const RotatingWord = ({ words }: { words: string[] }) => {
       setTimeout(() => {
         setIndex((prev) => (prev + 1) % words.length);
         setVisible(true);
-      }, 400);
-    }, 2800);
+      }, 600);
+    }, 3200);
     return () => clearInterval(interval);
   }, [words.length]);
 
   return (
     <span
-      className={`text-primary inline-block transition-all duration-400 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+      className={`text-muted-foreground inline-block transition-all duration-700 ease-in-out ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
       }`}
     >
       {words[index]}
