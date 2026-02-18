@@ -26,15 +26,15 @@ const RotatingWord = ({ words }: { words: string[] }) => {
       setTimeout(() => {
         setIndex((prev) => (prev + 1) % words.length);
         setVisible(true);
-      }, 600);
-    }, 3200);
+      }, 400);
+    }, 2800);
     return () => clearInterval(interval);
   }, [words.length]);
 
   return (
     <span
-      className={`text-muted-foreground inline-block transition-all duration-700 ease-in-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+      className={`text-primary inline-block transition-all duration-400 ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
       }`}
     >
       {words[index]}
@@ -64,73 +64,38 @@ const Index = () => {
   return (
     <>
       {/* Hero — 100svh */}
-      <section className="relative flex flex-col overflow-hidden py-10" style={{ minHeight: "calc(100svh - 4rem)" }}>
-        <div className="container relative z-10 flex flex-col flex-1">
-          {/* Top left — headline */}
-          <div className="space-y-5 max-w-2xl opacity-0 animate-fade-in">
-            <h1>
-              <span className="text-foreground">{t("hero.headline")}</span>
-              <br />
-              <RotatingWord words={rotatingWords} />
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-snug max-w-lg opacity-0 animate-fade-in-delay">
-              {t("hero.subhead")}
-            </p>
-          </div>
-
-          {/* Cards row — pushed down with flex spacing */}
-          <div className="grid grid-cols-4 gap-4 flex-1 opacity-0 animate-fade-in-delay" style={{ animationDelay: "0.4s", marginTop: "40px" }}>
-            {/* Left card — geometric visual (50%) */}
-            <div className="col-span-4 md:col-span-2 bg-accent/50 border rounded-xl overflow-hidden flex items-center justify-center">
-              <HeroGeometric className="w-full h-full max-h-[320px]" />
+      <section className="min-h-[100svh] relative flex items-end overflow-hidden pb-24">
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-end">
+            {/* Left — content, bottom aligned */}
+            <div className="space-y-8 max-w-2xl">
+              <h1 className="opacity-0 animate-fade-in">
+                <span className="text-foreground">{t("hero.headline")}</span>
+                <br />
+                <RotatingWord words={rotatingWords} />
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed opacity-0 animate-fade-in-delay">
+                {t("hero.subhead")}
+              </p>
+              <div className="flex flex-wrap gap-4 pt-2 opacity-0 animate-fade-in-delay" style={{ animationDelay: "0.4s" }}>
+                <Link to="/#demo">
+                  <Button variant="hero" size="lg">{t("hero.cta")}</Button>
+                </Link>
+                <a href="#product">
+                  <Button variant="hero-secondary" size="lg">{t("hero.secondary")}</Button>
+                </a>
+              </div>
             </div>
 
-            {/* Card 2 — Legal (25%) */}
-            <Link
-              to="/industries/legal"
-              className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-6 flex flex-col group"
-            >
-              <div className="space-y-3 flex-1">
-                <span className="inline-block border border-border rounded-full px-3 py-1 text-[10px] text-muted-foreground font-normal uppercase tracking-widest">
-                  {lang === "sv" ? "För juridik" : "For legal"}
-                </span>
-                <h3 className="text-xl font-display leading-tight">
-                  {lang === "sv" ? "För advokat- och juristbyråer" : "For law firms and legal advisors"}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {t("industries.legal.short")}
-                </p>
-              </div>
-              <Button variant="hero" size="sm" className="self-start">
-                {lang === "sv" ? "Utforska" : "Explore"}
-              </Button>
-            </Link>
-
-            {/* Card 3 — Regulated companies (25%) */}
-            <Link
-              to="/industries/fintech"
-              className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-6 flex flex-col group"
-            >
-              <div className="space-y-3 flex-1">
-                <span className="inline-block border border-border rounded-full px-3 py-1 text-[10px] text-muted-foreground font-normal uppercase tracking-widest">
-                  {lang === "sv" ? "För fintech" : "For fintech"}
-                </span>
-                <h3 className="text-xl font-display leading-tight">
-                  {lang === "sv" ? "För reglerade bolag" : "For regulated companies"}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {t("industries.fintech.short")}
-                </p>
-              </div>
-              <Button variant="hero-secondary" size="sm" className="self-start">
-                {lang === "sv" ? "Utforska" : "Explore"}
-              </Button>
-            </Link>
+            {/* Right — bold geometric composition */}
+            <div className="hidden lg:block relative">
+              <HeroGeometric className="w-full h-[500px] xl:h-[560px]" />
+            </div>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <a href="#trust" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
             <ChevronDown className="w-5 h-5 animate-scroll-cue" />
           </a>
@@ -159,7 +124,7 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-4 gap-6">
             {/* First card — double width */}
-            <div className="col-span-4 md:col-span-2 bg-background border rounded-xl p-8 space-y-4">
+            <div className="col-span-4 md:col-span-2 bg-background border rounded-2xl p-8 space-y-4">
               <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
                 {labels[0]}
               </span>
@@ -168,7 +133,7 @@ const Index = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[0]?.desc}</p>
             </div>
             {/* Second card — 25% */}
-            <div className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-8 space-y-4">
+            <div className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-2xl p-8 space-y-4">
               <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
                 {labels[1]}
               </span>
@@ -177,7 +142,7 @@ const Index = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[1]?.desc}</p>
             </div>
             {/* Third card — 25% */}
-            <div className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-8 space-y-4">
+            <div className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-2xl p-8 space-y-4">
               <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
                 {labels[2]}
               </span>
@@ -186,7 +151,7 @@ const Index = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[2]?.desc}</p>
             </div>
             {/* Fourth card — full width below on mobile, or could be additional row */}
-            <div className="col-span-4 md:col-span-2 bg-background border rounded-xl p-8 space-y-4">
+            <div className="col-span-4 md:col-span-2 bg-background border rounded-2xl p-8 space-y-4">
               <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
                 {labels[3]}
               </span>
@@ -232,7 +197,7 @@ const Index = () => {
               <Link
                 key={post.slug}
                 to={`/insights/${post.slug}`}
-                className="group bg-background border rounded-xl p-7 space-y-4"
+                className="group bg-background border rounded-2xl p-7 space-y-4"
               >
                 <div className="w-full h-2 rounded-full bg-primary/8 group-hover:bg-primary/15 transition-colors" />
                 <span className="text-xs text-muted-foreground uppercase tracking-wider font-normal">{post.category}</span>
@@ -256,7 +221,7 @@ const Index = () => {
               <Link
                 key={key}
                 to={`/industries/${key}`}
-                className="group bg-background border rounded-xl p-7 space-y-4"
+                className="group bg-background border rounded-2xl p-7 space-y-4"
               >
                 <div className="w-10 h-10 rounded-full bg-primary/8 group-hover:bg-primary/15 transition-colors" />
                 <h3 className="group-hover:text-primary transition-colors">
