@@ -124,7 +124,7 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-4 gap-6">
             {/* First card — double width */}
-            <div className="col-span-4 md:col-span-2 bg-background border rounded-2xl p-8 space-y-4">
+            <div className="col-span-4 md:col-span-2 bg-background border rounded-xl p-8 space-y-4">
               <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
                 {labels[0]}
               </span>
@@ -133,7 +133,7 @@ const Index = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[0]?.desc}</p>
             </div>
             {/* Second card — 25% */}
-            <div className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-2xl p-8 space-y-4">
+            <div className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-8 space-y-4">
               <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
                 {labels[1]}
               </span>
@@ -142,7 +142,7 @@ const Index = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[1]?.desc}</p>
             </div>
             {/* Third card — 25% */}
-            <div className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-2xl p-8 space-y-4">
+            <div className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-8 space-y-4">
               <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
                 {labels[2]}
               </span>
@@ -151,7 +151,7 @@ const Index = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">{valueCards[2]?.desc}</p>
             </div>
             {/* Fourth card — full width below on mobile, or could be additional row */}
-            <div className="col-span-4 md:col-span-2 bg-background border rounded-2xl p-8 space-y-4">
+            <div className="col-span-4 md:col-span-2 bg-background border rounded-xl p-8 space-y-4">
               <span className="inline-block border border-border rounded-full px-4 py-1.5 text-sm text-foreground font-normal">
                 {labels[3]}
               </span>
@@ -197,7 +197,7 @@ const Index = () => {
               <Link
                 key={post.slug}
                 to={`/insights/${post.slug}`}
-                className="group bg-background border rounded-2xl p-7 space-y-4"
+                className="group bg-background border rounded-xl p-7 space-y-4"
               >
                 <div className="w-full h-2 rounded-full bg-primary/8 group-hover:bg-primary/15 transition-colors" />
                 <span className="text-xs text-muted-foreground uppercase tracking-wider font-normal">{post.category}</span>
@@ -221,7 +221,7 @@ const Index = () => {
               <Link
                 key={key}
                 to={`/industries/${key}`}
-                className="group bg-background border rounded-2xl p-7 space-y-4"
+                className="group bg-background border rounded-xl p-7 space-y-4"
               >
                 <div className="w-10 h-10 rounded-full bg-primary/8 group-hover:bg-primary/15 transition-colors" />
                 <h3 className="group-hover:text-primary transition-colors">
