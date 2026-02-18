@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { HeroGeometric } from "@/components/GeometricMotif";
 import { DemoBand } from "@/components/DemoForm";
 import { ChevronDown } from "lucide-react";
+import Pill from "@/components/Pill";
 import { useSectionReveal } from "@/hooks/use-section-reveal";
 import { useState, useEffect } from "react";
 
@@ -91,9 +92,7 @@ const Index = () => {
               className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-6 flex flex-col group"
             >
               <div className="space-y-3 flex-1">
-                <span className="inline-block border border-border rounded-full px-3 py-1 text-[10px] text-muted-foreground font-normal uppercase tracking-widest">
-                  {lang === "sv" ? "För juridik" : "For legal"}
-                </span>
+                <Pill>{lang === "sv" ? "För juridik" : "For legal"}</Pill>
                 <h3 className="text-xl font-display leading-tight">
                   {lang === "sv" ? "För advokat- och juristbyråer" : "For law firms and legal advisors"}
                 </h3>
@@ -112,9 +111,7 @@ const Index = () => {
               className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-6 flex flex-col group"
             >
               <div className="space-y-3 flex-1">
-                <span className="inline-block border border-border rounded-full px-3 py-1 text-[10px] text-muted-foreground font-normal uppercase tracking-widest">
-                  {lang === "sv" ? "För fintech" : "For fintech"}
-                </span>
+                <Pill>{lang === "sv" ? "För fintech" : "For fintech"}</Pill>
                 <h3 className="text-xl font-display leading-tight">
                   {lang === "sv" ? "För reglerade bolag" : "For regulated companies"}
                 </h3>
@@ -206,9 +203,7 @@ const Index = () => {
 
           {/* Right — text 60% */}
           <div className="md:col-span-3 bg-accent/30 p-10 md:p-16 lg:p-20 flex flex-col justify-center space-y-6">
-            <span className="inline-block self-start border border-border rounded-full px-4 py-1.5 text-xs text-muted-foreground font-normal uppercase tracking-widest">
-              {lang === "sv" ? "Så funkar det" : "How it works"}
-            </span>
+            <Pill className="self-start">{lang === "sv" ? "Så funkar det" : "How it works"}</Pill>
             <h2 className="text-2xl md:text-3xl font-display leading-tight">{t("howItWorks.title")}</h2>
             <div className="space-y-5 pt-2">
               {steps.map((step, i) => (
@@ -278,9 +273,7 @@ const Index = () => {
         <div className="container">
           {/* Header area */}
           <div className="max-w-md mb-20 space-y-4">
-            <span className="inline-block border border-border rounded-full px-4 py-1.5 text-xs text-muted-foreground font-normal uppercase tracking-widest">
-              {lang === "sv" ? "Plattformen" : "The platform"}
-            </span>
+            <Pill>{lang === "sv" ? "Plattformen" : "The platform"}</Pill>
             <h2 className="text-2xl md:text-3xl font-display leading-tight">
               {lang === "sv" ? "Byggd för precision och transparens" : "Built for precision and transparency"}
             </h2>
