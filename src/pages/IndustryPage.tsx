@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
-import { DemoBand } from "@/components/DemoForm";
+
 
 const IndustryPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -80,8 +80,6 @@ const IndustryPage = () => {
           </div>
         </div>
       </section>
-
-      <DemoBand />
     </>
   );
 };
