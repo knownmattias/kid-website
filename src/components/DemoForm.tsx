@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import { useSectionReveal } from "@/hooks/use-section-reveal";
+import { ArrowRight } from "lucide-react";
 
 const DemoForm = () => {
   const { t } = useLanguage();
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -30,26 +28,20 @@ const DemoForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl">
-      <Input
-        type="text"
-        placeholder={t("demo.name")}
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-        className="bg-background rounded-xl"
-      />
-      <Input
-        type="email"
-        placeholder={t("demo.email")}
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-        className="bg-background rounded-xl"
-      />
-      <Button type="submit" variant="hero" className="shrink-0">
-        {t("demo.cta")}
-      </Button>
+    <form onSubmit={handleSubmit} className="max-w-xl">
+      <div className="flex items-center border-b border-border gap-3 pb-2">
+        <input
+          type="email"
+          placeholder={t("demo.email")}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="flex-1 bg-transparent text-base placeholder:text-muted-foreground focus:outline-none py-2"
+        />
+        <button type="submit" className="text-muted-foreground hover:text-foreground transition-colors p-1">
+          <ArrowRight className="w-5 h-5" />
+        </button>
+      </div>
     </form>
   );
 };
