@@ -199,21 +199,30 @@ const Index = () => {
       </RevealSection>
 
       {/* How it works */}
-      <RevealSection className="py-24 md:py-32 bg-accent/50">
-        <div className="container">
-          <div className="max-w-2xl mb-16">
-            <h2>{t("howItWorks.title")}</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-10">
-            {steps.map((step, i) => (
-              <div key={i} className="space-y-4">
-                <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg font-display font-normal">
-                  {i + 1}
+      <RevealSection className="py-0">
+        <div className="grid md:grid-cols-5 min-h-[480px]">
+          {/* Left — image 40% */}
+          <div className="md:col-span-2 bg-accent/60 min-h-[320px] md:min-h-full" />
+
+          {/* Right — text 60% */}
+          <div className="md:col-span-3 bg-accent/30 p-10 md:p-16 lg:p-20 flex flex-col justify-center space-y-6">
+            <span className="inline-block self-start border border-border rounded-full px-4 py-1.5 text-xs text-muted-foreground font-normal uppercase tracking-widest">
+              {lang === "sv" ? "Så funkar det" : "How it works"}
+            </span>
+            <h2 className="text-2xl md:text-3xl font-display leading-tight">{t("howItWorks.title")}</h2>
+            <div className="space-y-6 pt-2">
+              {steps.map((step, i) => (
+                <div key={i} className="flex gap-4">
+                  <div className="w-8 h-8 shrink-0 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-display font-normal">
+                    {i + 1}
+                  </div>
+                  <div>
+                    <h3 className="text-base font-display">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-1">{step.desc}</p>
+                  </div>
                 </div>
-                <h3>{step.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </RevealSection>
