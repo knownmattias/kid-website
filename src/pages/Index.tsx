@@ -273,6 +273,51 @@ const Index = () => {
         </div>
       </RevealSection>
 
+      {/* Platform features — list style */}
+      <RevealSection className="py-24 md:py-32">
+        <div className="container">
+          {/* Header area */}
+          <div className="max-w-md mb-20 space-y-4">
+            <span className="inline-block border border-border rounded-full px-4 py-1.5 text-xs text-muted-foreground font-normal uppercase tracking-widest">
+              {lang === "sv" ? "Plattformen" : "The platform"}
+            </span>
+            <h2 className="text-2xl md:text-3xl font-display leading-tight">
+              {lang === "sv" ? "Byggd för precision och transparens" : "Built for precision and transparency"}
+            </h2>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {lang === "sv"
+                ? "En robust arkitektur som säkerställer att varje steg i KYC-processen är spårbart, konsekvent och redo för granskning."
+                : "A robust architecture ensuring every step of the KYC process is traceable, consistent, and audit-ready."}
+            </p>
+          </div>
+
+          {/* Feature rows */}
+          <div className="divide-y divide-border border-y border-border">
+            {(lang === "sv"
+              ? [
+                  { title: "Smart dataarkitektur", desc: "Sammankopplar och organiserar komplex kundinformation i en tydlig, enhetlig struktur." },
+                  { title: "Automatiserade arbetsflöden", desc: "Regelstyrda processer som säkerställer konsekvens från insamling till färdig riskbedömning." },
+                  { title: "Standardiserade definitioner", desc: "Enhetliga termer för risk, ägarstruktur och verklig huvudman — oavsett datakälla." },
+                  { title: "Automatisk datamatchning", desc: "Matchning och rensning av data så att olika register och källor fungerar sömlöst ihop." },
+                  { title: "Fullständig spårbarhet", desc: "Komplett historik över varje ändring och beslut, transparent och redo för granskning." },
+                ]
+              : [
+                  { title: "Smart data architecture", desc: "Connects and organizes complex client information into one clear, unified structure." },
+                  { title: "Automated workflows", desc: "Rule-driven processes ensuring consistency from data collection to final risk assessment." },
+                  { title: "Standard definitions", desc: "Unified terms for risk, ownership structures, and beneficial owners — regardless of data source." },
+                  { title: "Automatic data matching", desc: "Matching and cleaning data so different registries and sources work together seamlessly." },
+                  { title: "Full tracking & audit trail", desc: "Complete history of every change and decision, transparent and audit-ready." },
+                ]
+            ).map((item, i) => (
+              <div key={i} className="grid md:grid-cols-2 gap-4 py-8 md:py-10">
+                <h3 className="text-base md:text-lg font-display">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </RevealSection>
+
       {/* Demo CTA band */}
       <DemoBand />
     </>
