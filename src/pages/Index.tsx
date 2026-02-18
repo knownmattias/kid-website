@@ -79,16 +79,16 @@ const Index = () => {
           </div>
 
           {/* Cards row — pushed down with flex spacing */}
-          <div className="mt-auto grid grid-cols-4 gap-4 opacity-0 animate-fade-in-delay" style={{ animationDelay: "0.4s" }}>
+          <div className="grid grid-cols-4 gap-4 flex-1 opacity-0 animate-fade-in-delay" style={{ animationDelay: "0.4s", marginTop: "40px" }}>
             {/* Left card — geometric visual (50%) */}
-            <div className="col-span-4 md:col-span-2 bg-accent/50 border rounded-xl overflow-hidden min-h-[340px] flex items-center justify-center">
+            <div className="col-span-4 md:col-span-2 bg-accent/50 border rounded-xl overflow-hidden flex items-center justify-center">
               <HeroGeometric className="w-full h-full max-h-[320px]" />
             </div>
 
             {/* Card 2 — Legal (25%) */}
             <Link
               to="/industries/legal"
-              className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-6 flex flex-col min-h-[340px] group"
+              className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-6 flex flex-col group"
             >
               <div className="space-y-3 flex-1">
                 <span className="inline-block border border-border rounded-full px-3 py-1 text-[10px] text-muted-foreground font-normal uppercase tracking-widest">
@@ -109,7 +109,7 @@ const Index = () => {
             {/* Card 3 — Regulated companies (25%) */}
             <Link
               to="/industries/fintech"
-              className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-6 flex flex-col min-h-[340px] group"
+              className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-6 flex flex-col group"
             >
               <div className="space-y-3 flex-1">
                 <span className="inline-block border border-border rounded-full px-3 py-1 text-[10px] text-muted-foreground font-normal uppercase tracking-widest">
