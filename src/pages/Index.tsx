@@ -64,8 +64,8 @@ const Index = () => {
   return (
     <>
       {/* Hero — 100svh */}
-      <section className="min-h-[100svh] relative flex flex-col overflow-hidden pt-12 pb-8">
-        <div className="container relative z-10 flex flex-col flex-1">
+      <section className="min-h-[100svh] relative flex flex-col overflow-hidden pt-12 pb-16">
+        <div className="container relative z-10 flex flex-col flex-1 justify-between">
           {/* Top left — headline */}
           <div className="space-y-6 max-w-2xl mb-12 opacity-0 animate-fade-in">
             <h1>
@@ -79,7 +79,7 @@ const Index = () => {
           </div>
 
           {/* Three cards at bottom */}
-          <div className="mt-auto grid grid-cols-4 gap-6 opacity-0 animate-fade-in-delay" style={{ animationDelay: "0.4s" }}>
+          <div className="grid grid-cols-4 gap-6 opacity-0 animate-fade-in-delay" style={{ animationDelay: "0.4s" }}>
             {/* Left card — geometric visual (50%) */}
             <div className="col-span-4 md:col-span-2 bg-accent/50 border rounded-xl p-8 flex items-center justify-center min-h-[280px]">
               <HeroGeometric className="w-full h-full max-h-[260px]" />
