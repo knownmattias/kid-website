@@ -11,15 +11,13 @@ export default {
   prefix: "",
   theme: {
     container: {
-      center: true,
+      center: false,
       padding: "2rem",
-      screens: {
-        "2xl": "1200px",
-      },
     },
     extend: {
       fontFamily: {
-        sans: ["Manrope", "Inter", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Urbanist", "Inter", "system-ui", "sans-serif"],
       },
       height: {
         "13": "3.25rem",
