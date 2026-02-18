@@ -10,7 +10,7 @@ export const translations: Record<string, any> = {
     },
     hero: {
       headline: "Know your",
-      rotatingWords: ["customers", "participants", "clients", "investors", "shareholders"],
+      rotatingWords: ["customers", "clients", "customers", "counterparties", "customers", "investors", "customers", "shareholders", "customers", "suppliers"],
       subhead: "En samlad plattform för kundkännedom: säker datainsamling, smidigt samarbete och revisionsklara arbetsflöden.",
       cta: "Prata med oss",
       secondary: "Se hur det fungerar",
@@ -205,7 +205,7 @@ export const translations: Record<string, any> = {
     },
     hero: {
       headline: "Know your",
-      rotatingWords: ["customers", "participants", "clients", "investors", "shareholders"],
+      rotatingWords: ["customers", "clients", "customers", "counterparties", "customers", "investors", "customers", "shareholders", "customers", "suppliers"],
       subhead: "One platform for customer due diligence: secure data collection, smooth collaboration, and audit-ready workflows.",
       cta: "Talk to us",
       secondary: "See how it works",

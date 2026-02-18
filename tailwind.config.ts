@@ -17,7 +17,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Urbanist", "Inter", "system-ui", "sans-serif"],
+        display: ["Funnel Sans", "Inter", "system-ui", "sans-serif"],
       },
       height: {
         "13": "3.25rem",
