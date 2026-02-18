@@ -64,44 +64,44 @@ const Index = () => {
   return (
     <>
       {/* Hero — 100svh */}
-      <section className="min-h-[100svh] relative flex flex-col overflow-hidden pt-12">
-        <div className="container relative z-10">
+      <section className="min-h-[100svh] relative flex flex-col overflow-hidden py-10">
+        <div className="container relative z-10 flex flex-col flex-1">
           {/* Top left — headline */}
-          <div className="space-y-6 max-w-2xl mb-12 opacity-0 animate-fade-in">
+          <div className="space-y-5 max-w-2xl opacity-0 animate-fade-in">
             <h1>
               <span className="text-foreground">{t("hero.headline")}</span>
               <br />
               <RotatingWord words={rotatingWords} />
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed opacity-0 animate-fade-in-delay">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg opacity-0 animate-fade-in-delay">
               {t("hero.subhead")}
             </p>
           </div>
 
-          {/* Three cards at bottom */}
-          <div className="grid grid-cols-4 gap-6 opacity-0 animate-fade-in-delay" style={{ animationDelay: "0.4s" }}>
+          {/* Cards row — pushed down with flex spacing */}
+          <div className="mt-auto grid grid-cols-4 gap-4 opacity-0 animate-fade-in-delay" style={{ animationDelay: "0.4s" }}>
             {/* Left card — geometric visual (50%) */}
-            <div className="col-span-4 md:col-span-2 bg-accent/50 border rounded-xl p-8 flex items-center justify-center min-h-[280px]">
-              <HeroGeometric className="w-full h-full max-h-[260px]" />
+            <div className="col-span-4 md:col-span-2 bg-accent/50 border rounded-xl overflow-hidden min-h-[340px] flex items-center justify-center">
+              <HeroGeometric className="w-full h-full max-h-[320px]" />
             </div>
 
             {/* Card 2 — Legal (25%) */}
             <Link
               to="/industries/legal"
-              className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-7 flex flex-col justify-between min-h-[280px] group"
+              className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-6 flex flex-col min-h-[340px] group"
             >
-              <div className="space-y-4">
-                <span className="inline-block border border-border rounded-full px-3 py-1 text-xs text-muted-foreground font-normal uppercase tracking-wider">
+              <div className="space-y-3 flex-1">
+                <span className="inline-block border border-border rounded-full px-3 py-1 text-[10px] text-muted-foreground font-normal uppercase tracking-widest">
                   {lang === "sv" ? "För juridik" : "For legal"}
                 </span>
-                <h3 className="text-lg font-display">
+                <h3 className="text-xl font-display leading-tight">
                   {lang === "sv" ? "För advokat- och juristbyråer" : "For law firms and legal advisors"}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {t("industries.legal.short")}
                 </p>
               </div>
-              <Button variant="hero" size="sm" className="self-start mt-6">
+              <Button variant="hero" size="sm" className="self-start">
                 {lang === "sv" ? "Utforska" : "Explore"}
               </Button>
             </Link>
@@ -109,20 +109,20 @@ const Index = () => {
             {/* Card 3 — Regulated companies (25%) */}
             <Link
               to="/industries/fintech"
-              className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-7 flex flex-col justify-between min-h-[280px] group"
+              className="col-span-4 sm:col-span-2 md:col-span-1 bg-background border rounded-xl p-6 flex flex-col min-h-[340px] group"
             >
-              <div className="space-y-4">
-                <span className="inline-block border border-border rounded-full px-3 py-1 text-xs text-muted-foreground font-normal uppercase tracking-wider">
+              <div className="space-y-3 flex-1">
+                <span className="inline-block border border-border rounded-full px-3 py-1 text-[10px] text-muted-foreground font-normal uppercase tracking-widest">
                   {lang === "sv" ? "För fintech" : "For fintech"}
                 </span>
-                <h3 className="text-lg font-display">
+                <h3 className="text-xl font-display leading-tight">
                   {lang === "sv" ? "För reglerade bolag" : "For regulated companies"}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {t("industries.fintech.short")}
                 </p>
               </div>
-              <Button variant="hero-secondary" size="sm" className="self-start mt-6">
+              <Button variant="hero-secondary" size="sm" className="self-start">
                 {lang === "sv" ? "Utforska" : "Explore"}
               </Button>
             </Link>
