@@ -1,25 +1,14 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useState } from "react";
-import { Input } from "@/components/ui/input";
 import { ArrowRight } from "lucide-react";
 import Pill from "@/components/Pill";
 
 const Insights = () => {
   const { t } = useLanguage();
-  const [search, setSearch] = useState("");
 
   const posts = t("insights.posts") as unknown as Array<{
     slug: string; category: string; title: string; excerpt: string; date: string;
   }>;
-
-  const filtered = posts.filter(
-    (p) =>
-      p.title.toLowerCase().includes(search.toLowerCase()) ||
-      p.category.toLowerCase().includes(search.toLowerCase())
-  );
-
-  const categories = [...new Set(posts.map((p) => p.category))];
 
   const placeholderImages = [
     "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=750&fit=crop",
@@ -31,33 +20,10 @@ const Insights = () => {
     <div className="bg-muted min-h-screen">
       <div className="py-16 md:py-24">
         <div className="px-6 md:px-12 lg:px-20">
-          <h1 className="text-3xl md:text-4xl font-normal mb-4">{t("insights.title")}</h1>
-          <div className="flex flex-wrap gap-3 mb-12 items-center">
-            <Input
-              placeholder={t("insights.search")}
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="max-w-xs bg-background rounded-none"
-            />
-            <div className="flex gap-2">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSearch(search === cat ? "" : cat)}
-                  className={`text-xs px-3 py-1 rounded-full border transition-colors ${
-                    search === cat
-                      ? "bg-primary text-primary-foreground border-primary"
-                      : "text-muted-foreground border-border hover:border-foreground"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
+          <h1 className="text-3xl md:text-4xl font-normal mb-12">{t("insights.title")}</h1>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {filtered.map((post, i) => (
+            {posts.map((post, i) => (
               <Link
                 key={post.slug}
                 to={`/insights/${post.slug}`}
