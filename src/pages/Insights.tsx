@@ -40,14 +40,14 @@ const Insights = () => {
                   <span className="text-xs text-muted-foreground uppercase tracking-wider mb-3">
                     {post.category}
                   </span>
-                  <h2 className="text-base md:text-lg font-normal leading-[1.15] mb-3">
+                  <h2 className="text-base md:text-lg font-normal leading-[0.85] mb-3">
                     {post.title}
                   </h2>
-                  <p className="text-sm text-muted-foreground mb-4 flex-1">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-end justify-end">
-                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:translate-x-1 transition-transform" />
+                  <div className="flex items-end gap-3">
+                    <p className="text-sm text-muted-foreground flex-1">
+                      {post.excerpt}
+                    </p>
+                    <ArrowRight className="w-5 h-5 shrink-0 text-muted-foreground group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </Link>
