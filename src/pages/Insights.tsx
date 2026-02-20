@@ -56,7 +56,7 @@ const Insights = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {filtered.map((post, i) => (
               <Link
                 key={post.slug}
@@ -67,11 +67,11 @@ const Insights = () => {
                   <img
                     src={placeholderImages[i % placeholderImages.length]}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                     loading="lazy"
                   />
                 </div>
-                <div className="p-6 flex flex-col flex-1">
+                <div className="p-5 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs text-muted-foreground">{post.category}</span>
                     <Pill>{post.category}</Pill>
