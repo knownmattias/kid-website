@@ -20,26 +20,25 @@ const RowList = ({ items }: RowListProps) => (
           <h3 className="text-base md:text-lg font-display group-hover:text-primary transition-colors">
             {item.title}
           </h3>
-          <div className="flex items-center justify-between md:justify-end">
-            {item.desc ? (
+          <div className="flex items-center justify-end">
+            {item.desc && (
               <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-            ) : (
+            )}
+            {item.href && !item.desc && (
               <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
             )}
           </div>
         </>
       );
 
+      const cls = "grid md:grid-cols-2 gap-4 py-6 md:py-7 group";
+
       return item.href ? (
-        <Link
-          key={i}
-          to={item.href}
-          className="grid md:grid-cols-2 gap-4 py-8 md:py-10 group"
-        >
+        <Link key={i} to={item.href} className={cls}>
           {content}
         </Link>
       ) : (
-        <div key={i} className="grid md:grid-cols-2 gap-4 py-8 md:py-10 group">
+        <div key={i} className={cls}>
           {content}
         </div>
       );
