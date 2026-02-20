@@ -11,8 +11,8 @@ import InsightArticle from "./pages/InsightArticle";
 import Industries from "./pages/Industries";
 import IndustryPage from "./pages/IndustryPage";
 import About from "./pages/About";
-import Terms from "./pages/Terms";
-import Privacy from "./pages/Privacy";
+import Legal from "./pages/Legal";
+import LegalDocument from "./pages/LegalDocument";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,8 +32,8 @@ const App = () => (
               <Route path="/industries" element={<Industries />} />
               <Route path="/industries/:slug" element={<IndustryPage />} />
               <Route path="/about" element={<About />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/legal" element={<Legal />} />
+              <Route path="/legal/:slug" element={<LegalDocument />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -21,7 +21,7 @@ const Footer = () => {
             <DemoForm />
             <p className="text-xs text-muted-foreground mt-4">
               {t("demo.privacy")}{" "}
-              <Link to="/privacy" className="underline hover:text-foreground transition-colors">
+              <Link to="/legal/privacy-policy" className="underline hover:text-foreground transition-colors">
                 {t("demo.privacyLink")}
               </Link>
               .
@@ -60,7 +60,7 @@ const Footer = () => {
 
         {/* Bottom row: address + legal */}
         <div className="flex flex-col md:flex-row justify-between items-end mt-24 gap-8">
-          <Link to="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/legal" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
             Legal
           </Link>
           <div className="text-xs text-muted-foreground space-y-1 text-right">
