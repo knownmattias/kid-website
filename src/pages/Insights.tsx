@@ -40,9 +40,9 @@ const Insights = () => {
                   <span className="text-xs text-muted-foreground uppercase tracking-wider mb-3">
                     {post.category}
                   </span>
-                  <h2 className="text-base md:text-lg font-normal leading-[0.85] mb-3">
+                  <p className="text-base md:text-lg font-display font-normal mb-3" style={{ lineHeight: '0.85', letterSpacing: '-0.025em' }}>
                     {post.title}
-                  </h2>
+                  </p>
                   <div className="flex items-end gap-3">
                     <p className="text-sm text-muted-foreground flex-1">
                       {post.excerpt}
