@@ -20,12 +20,12 @@ const RowList = ({ items }: RowListProps) => (
           <h3 className="text-base md:text-lg font-display group-hover:text-primary transition-colors">
             {item.title}
           </h3>
-          <div className="flex items-center justify-end">
+          <div className="flex items-center justify-end gap-4">
             {item.desc && (
               <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
             )}
-            {item.href && !item.desc && (
-              <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+            {item.href && (
+              <ArrowRight className="w-4 h-4 shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />
             )}
           </div>
         </>
