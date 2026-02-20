@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSectionReveal } from "@/hooks/use-section-reveal";
-import { ArrowRight } from "lucide-react";
+import RowList from "@/components/RowList";
 
 const legalDocs = [
   { slug: "terms-individual", sv: "Villkor — privatperson", en: "Terms — Individual" },
@@ -30,22 +29,12 @@ const Legal = () => {
           </p>
         </div>
 
-        <div className="divide-y divide-border border-y border-border">
-          {legalDocs.map((doc) => (
-            <Link
-              key={doc.slug}
-              to={`/legal/${doc.slug}`}
-              className="grid md:grid-cols-2 gap-4 py-8 md:py-10 group"
-            >
-              <h2 className="text-base md:text-lg font-display group-hover:text-primary transition-colors">
-                {lang === "sv" ? doc.sv : doc.en}
-              </h2>
-              <div className="flex items-center justify-end">
-                <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-              </div>
-            </Link>
-          ))}
-        </div>
+        <RowList
+          items={legalDocs.map((doc) => ({
+            title: lang === "sv" ? doc.sv : doc.en,
+            href: `/legal/${doc.slug}`,
+          }))}
+        />
       </div>
     </div>
   );
