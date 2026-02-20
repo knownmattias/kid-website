@@ -73,7 +73,6 @@ const Insights = () => {
                 </div>
                 <div className="p-5 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs text-muted-foreground">{post.category}</span>
                     <Pill>{post.category}</Pill>
                   </div>
                   <h2 className="text-xl md:text-2xl font-normal leading-tight mb-3">
