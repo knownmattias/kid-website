@@ -6,6 +6,7 @@ import { HeroGeometric } from "@/components/GeometricMotif";
 import { ChevronDown } from "lucide-react";
 import Pill from "@/components/Pill";
 import { useSectionReveal } from "@/hooks/use-section-reveal";
+import RowList from "@/components/RowList";
 import { useState, useEffect } from "react";
 
 const RevealSection = ({ children, className = "", ...props }: React.HTMLAttributes<HTMLElement> & { children: React.ReactNode }) => {
@@ -282,9 +283,8 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Feature rows */}
-          <div className="divide-y divide-border border-y border-border">
-            {(lang === "sv"
+          <RowList
+            items={(lang === "sv"
               ? [
                   { title: "Smart dataarkitektur", desc: "Sammankopplar och organiserar komplex kundinformation i en tydlig, enhetlig struktur." },
                   { title: "Automatiserade arbetsflöden", desc: "Regelstyrda processer som säkerställer konsekvens från insamling till färdig riskbedömning." },
@@ -299,13 +299,8 @@ const Index = () => {
                   { title: "Automatic data matching", desc: "Matching and cleaning data so different registries and sources work together seamlessly." },
                   { title: "Full tracking & audit trail", desc: "Complete history of every change and decision, transparent and audit-ready." },
                 ]
-            ).map((item, i) => (
-              <div key={i} className="grid md:grid-cols-2 gap-4 py-8 md:py-10">
-                <h3 className="text-base md:text-lg font-display">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
+            )}
+          />
         </div>
       </RevealSection>
 
