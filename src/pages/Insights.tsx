@@ -63,7 +63,7 @@ const Insights = () => {
                 to={`/insights/${post.slug}`}
                 className="group bg-card flex flex-col"
               >
-                <div className="aspect-[4/5] overflow-hidden">
+                <div className="aspect-square overflow-hidden">
                   <img
                     src={placeholderImages[i % placeholderImages.length]}
                     alt={post.title}
@@ -74,7 +74,7 @@ const Insights = () => {
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs text-muted-foreground">{post.category}</span>
-                    <Pill>{post.date}</Pill>
+                    <Pill>{post.category}</Pill>
                   </div>
                   <h2 className="text-xl md:text-2xl font-normal leading-tight mb-3">
                     {post.title}
