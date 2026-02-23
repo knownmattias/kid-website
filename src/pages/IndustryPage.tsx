@@ -176,6 +176,40 @@ const IndustryPage = () => {
         </section>
       )}
 
+      {/* Stats banner — legal only */}
+      {slug === "legal" && (() => {
+        const stats = lang === "sv"
+          ? [
+              { value: "97%", desc: "Upplever förbättrad kvalitet i sitt arbete" },
+              { value: "4+", desc: "Icke-fakturerbara timmar sparade per vecka" },
+              { value: "2,4M", desc: "Potentiell merdebitering per 100 jurister årligen" },
+            ]
+          : [
+              { value: "97%", desc: "Report an improvement in the quality of their work" },
+              { value: "4+", desc: "Non-billable hours saved by experienced users weekly" },
+              { value: "$6.4m", desc: "Potential additional billing per 100 lawyers annually" },
+            ];
+        return (
+          <section className="py-16 md:py-24 border-b border-border">
+            <div className="container">
+              <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 items-start">
+                <p className="text-xs uppercase tracking-widest text-muted-foreground">
+                  KnownID {lang === "sv" ? "för juridik" : "for legal"}
+                </p>
+                <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+                  {stats.map((stat, i) => (
+                    <div key={i}>
+                      <p className="text-4xl md:text-5xl font-display font-normal italic mb-2">{stat.value}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{stat.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
       {/* Case block */}
       <section className="py-16 md:py-20 bg-muted/50">
         <div className="container max-w-3xl">
