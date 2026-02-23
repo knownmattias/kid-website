@@ -217,16 +217,6 @@ const Index = () => {
         </div>
       </RevealSection>
 
-      {/* Full-width office image */}
-      <div className="w-full">
-        <img
-          src={officeBuildingImg}
-          alt="Office building facade"
-          className="w-full h-[300px] md:h-[450px] object-cover"
-          loading="lazy"
-        />
-      </div>
-
       {/* Insights teaser */}
       <RevealSection className="py-24 md:py-32">
         <div className="container">
@@ -252,31 +242,15 @@ const Index = () => {
         </div>
       </RevealSection>
 
-      {/* Industries teaser */}
-      <RevealSection className="py-24 md:py-32 bg-accent/50">
-        <div className="container">
-          <div className="max-w-2xl mb-16">
-            <h2>{t("industries.title")}</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {industryKeys.map((key) => (
-              <Link
-                key={key}
-                to={`/industries/${key}`}
-                className="group bg-background border rounded-xl p-7 space-y-4"
-              >
-                <div className="w-10 h-10 rounded-full bg-primary/8 group-hover:bg-primary/15 transition-colors" />
-                <h3 className="group-hover:text-primary transition-colors">
-                  {t(`industries.${key}.name`)}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {t(`industries.${key}.short`)}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </RevealSection>
+      {/* Full-width office image */}
+      <div className="w-full">
+        <img
+          src={officeBuildingImg}
+          alt="Office building facade"
+          className="w-full h-[300px] md:h-[450px] object-cover"
+          loading="lazy"
+        />
+      </div>
 
       {/* Platform features — list style */}
       <RevealSection className="py-24 md:py-32">
@@ -312,6 +286,32 @@ const Index = () => {
                 ]
             )}
           />
+        </div>
+      </RevealSection>
+
+      {/* Industries teaser */}
+      <RevealSection className="py-24 md:py-32 bg-accent/50">
+        <div className="container">
+          <div className="max-w-2xl mb-16">
+            <h2>{t("industries.title")}</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {industryKeys.map((key) => (
+              <Link
+                key={key}
+                to={`/industries/${key}`}
+                className="group bg-background border rounded-xl p-7 space-y-4"
+              >
+                <div className="w-10 h-10 rounded-full bg-primary/8 group-hover:bg-primary/15 transition-colors" />
+                <h3 className="group-hover:text-primary transition-colors">
+                  {t(`industries.${key}.name`)}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {t(`industries.${key}.short`)}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
       </RevealSection>
 
