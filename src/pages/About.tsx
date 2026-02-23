@@ -1,15 +1,33 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import GeometricMotif from "@/components/GeometricMotif";
+import Pill from "@/components/Pill";
 
 const About = () => {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   const values = t("about.values") as unknown as Array<{ title: string; desc: string }>;
   const team = t("about.team") as unknown as Array<{ name: string; role: string }>;
 
   return (
-    <div className="py-16 md:py-24">
-      <div className="container max-w-3xl">
+    <div>
+      {/* Vår idé section */}
+      <section className="py-24 md:py-32">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-20">
+            <div>
+              <Pill>{lang === "sv" ? "Vår idé" : "Our idea"}</Pill>
+            </div>
+            <p className="text-xl md:text-2xl font-display leading-snug">
+              {lang === "sv"
+                ? "Din data hanteras med högsta säkerhet. Krypterad lagring, strikt åtkomstkontroll och fullständig GDPR-efterlevnad — så att du kan fokusera på affären."
+                : "Your data is handled with the highest security. Encrypted storage, strict access control, and full GDPR compliance — so you can focus on business."}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="py-16 md:py-24">
+        <div className="container max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-normal mb-6">{t("about.title")}</h1>
         <div className="space-y-4 mb-16">
           <p className="text-base text-muted-foreground leading-relaxed">{t("about.story")}</p>
@@ -48,6 +66,7 @@ const About = () => {
           <h2 className="text-lg font-medium mb-2">{t("nav.contact")}</h2>
           <p className="text-sm text-muted-foreground">info@knownid.io</p>
         </div>
+      </div>
       </div>
     </div>
   );
