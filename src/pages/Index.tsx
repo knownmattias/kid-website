@@ -231,7 +231,7 @@ const Index = () => {
               <Link
                 key={post.slug}
                 to={`/insights/${post.slug}`}
-                className="group space-y-4"
+                className="group space-y-2"
               >
                 <div className="w-full aspect-[4/5] rounded-xl bg-accent/60 overflow-hidden" />
                 <h3 className="text-lg font-display leading-snug group-hover:text-primary transition-colors">{post.title}</h3>
