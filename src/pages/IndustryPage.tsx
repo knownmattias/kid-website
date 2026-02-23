@@ -223,6 +223,31 @@ const IndustryPage = () => {
         </div>
       )}
 
+      {/* Insights section for legal */}
+      {slug === "legal" && (() => {
+        const posts = t("insights.posts") as unknown as Array<{
+          slug: string; category: string; title: string; excerpt: string;
+        }>;
+        return (
+          <section className="py-24 md:py-32">
+            <div className="container">
+              <div className="flex items-end justify-between mb-12">
+                <h2>{t("insights.title")}</h2>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+                {posts.slice(0, 4).map((post) => (
+                  <div key={post.slug} className="space-y-2">
+                    <div className="w-full aspect-[4/5] rounded-xl bg-accent/60 overflow-hidden" />
+                    <h3 className="text-lg font-display leading-snug">{post.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-snug">{post.excerpt}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
       {/* Case block */}
       <section className="py-16 md:py-20 bg-muted/50">
         <div className="container max-w-3xl">
