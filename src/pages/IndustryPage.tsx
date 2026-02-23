@@ -125,54 +125,52 @@ const IndustryPage = () => {
       {slug === "legal" && (
         <section className="py-20 md:py-28">
           <div className="container">
-            <div className="border border-border rounded-xl overflow-hidden">
-              {/* Top: pill + heading + split hero */}
-              <div className="p-8 md:p-12 pb-0 md:pb-0">
-                <Pill className="mb-6">
-                  {lang === "sv" ? "Precision" : "Precision"}
-                </Pill>
-                <h2 className="text-2xl md:text-3xl font-display mb-3">
-                  {lang === "sv" ? "En partner som förstår juridiken" : "A partner that understands the law"}
-                </h2>
-                <p className="text-muted-foreground max-w-lg mb-10">
-                  {lang === "sv"
-                    ? "Vi bygger KYC-verktyg som utgår från juridikens behov: skräddarsytt, korrekt och utan kompromisser."
-                    : "We build KYC tools grounded in legal needs: tailored, precise, and without compromise."}
-                </p>
-              </div>
+            {/* Pill + heading */}
+            <div className="mb-12">
+              <Pill className="mb-6">
+                {lang === "sv" ? "Precision" : "Precision"}
+              </Pill>
+              <h2 className="text-2xl md:text-3xl font-display mb-3">
+                {lang === "sv" ? "En partner som förstår juridiken" : "A partner that understands the law"}
+              </h2>
+              <p className="text-muted-foreground max-w-lg">
+                {lang === "sv"
+                  ? "Vi bygger KYC-verktyg som utgår från juridikens behov: skräddarsytt, korrekt och utan kompromisser."
+                  : "We build KYC tools grounded in legal needs: tailored, precise, and without compromise."}
+              </p>
+            </div>
 
-              {/* Split: geometric motif + testimonial */}
-              <div className="grid md:grid-cols-2">
-                <div className="bg-foreground/95 flex items-center justify-center p-8 min-h-[320px] md:min-h-[380px] rounded-br-none md:rounded-bl-xl overflow-hidden">
-                  <GeometricMotif className="w-full max-w-[280px] opacity-30 invert" />
+            {/* 2-col grid with gap and individual borders */}
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-16">
+              <div className="bg-foreground/95 rounded-xl flex items-center justify-center p-8 min-h-[300px] md:min-h-[380px] overflow-hidden">
+                <GeometricMotif className="w-full max-w-[280px] opacity-30 invert" />
+              </div>
+              <div className="bg-muted/60 border border-border rounded-xl p-8 md:p-10 flex flex-col justify-between min-h-[300px] md:min-h-[380px]">
+                <div>
+                  <span className="text-4xl text-muted-foreground/40 font-serif leading-none">"</span>
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed mt-2">
+                    "{legalTestimonial[lang as "sv" | "en"].quote}"
+                  </p>
                 </div>
-                <div className="bg-muted/60 p-8 md:p-10 flex flex-col justify-between min-h-[320px] md:min-h-[380px]">
+                <div className="flex items-center gap-3 mt-8">
+                  <div className="w-10 h-10 rounded-full bg-muted-foreground/20" />
                   <div>
-                    <span className="text-4xl text-muted-foreground/40 font-serif leading-none">"</span>
-                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed mt-2">
-                      "{legalTestimonial[lang as "sv" | "en"].quote}"
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 mt-8">
-                    <div className="w-10 h-10 rounded-full bg-muted-foreground/20" />
-                    <div>
-                      <p className="text-sm font-medium">{legalTestimonial[lang as "sv" | "en"].name}</p>
-                      <p className="text-xs text-muted-foreground">{legalTestimonial[lang as "sv" | "en"].role}</p>
-                    </div>
+                    <p className="text-sm font-medium">{legalTestimonial[lang as "sv" | "en"].name}</p>
+                    <p className="text-xs text-muted-foreground">{legalTestimonial[lang as "sv" | "en"].role}</p>
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Bottom: 3 feature cards */}
-              <div className="grid md:grid-cols-3 border-t border-border divide-y md:divide-y-0 md:divide-x divide-border">
-                {legalValueCards[lang as "sv" | "en"].map((card, i) => (
-                  <div key={i} className="p-7 md:p-8 space-y-3">
-                    <card.icon className="w-5 h-5 text-muted-foreground" />
-                    <h3 className="text-sm font-medium">{card.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
-                  </div>
-                ))}
-              </div>
+            {/* 3-col grid, no borders */}
+            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+              {legalValueCards[lang as "sv" | "en"].map((card, i) => (
+                <div key={i} className="space-y-3">
+                  <card.icon className="w-5 h-5 text-muted-foreground" />
+                  <h3 className="text-sm font-medium">{card.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
