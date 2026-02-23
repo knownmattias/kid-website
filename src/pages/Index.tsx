@@ -8,6 +8,7 @@ import Pill from "@/components/Pill";
 import { useSectionReveal } from "@/hooks/use-section-reveal";
 import RowList from "@/components/RowList";
 import { useState, useEffect } from "react";
+import officeBuildingImg from "@/assets/office-building.png";
 
 const RevealSection = ({ children, className = "", ...props }: React.HTMLAttributes<HTMLElement> & { children: React.ReactNode }) => {
   const ref = useSectionReveal();
@@ -215,6 +216,16 @@ const Index = () => {
           </div>
         </div>
       </RevealSection>
+
+      {/* Full-width office image */}
+      <div className="w-full">
+        <img
+          src={officeBuildingImg}
+          alt="Office building facade"
+          className="w-full h-[300px] md:h-[450px] object-cover"
+          loading="lazy"
+        />
+      </div>
 
       {/* Insights teaser */}
       <RevealSection className="py-24 md:py-32">
