@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Pill from "@/components/Pill";
 import GeometricMotif from "@/components/GeometricMotif";
 import { Scale, MessageSquareQuote, ShieldCheck } from "lucide-react";
+import legalMeetingImg from "@/assets/legal-meeting.png";
 
 const legalValueCards = {
   sv: [
@@ -209,6 +210,18 @@ const IndustryPage = () => {
           </section>
         );
       })()}
+
+      {/* Full-width legal image */}
+      {slug === "legal" && (
+        <div className="w-full">
+          <img
+            src={legalMeetingImg}
+            alt="Law firm meeting room"
+            className="w-full h-[300px] md:h-[450px] object-cover"
+            loading="lazy"
+          />
+        </div>
+      )}
 
       {/* Case block */}
       <section className="py-16 md:py-20 bg-muted/50">
