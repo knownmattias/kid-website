@@ -78,15 +78,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Contact */}
-      <section className="py-16 md:py-24">
-        <div className="container max-w-3xl">
-          <div id="contact" className="bg-card border rounded-lg p-8">
-            <h2 className="text-lg font-medium mb-2">{t("nav.contact")}</h2>
-            <p className="text-sm text-muted-foreground">info@knownid.io</p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
