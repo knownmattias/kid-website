@@ -45,24 +45,42 @@ const About = () => {
       </section>
 
       {/* Team */}
+      <section className="py-24 md:py-32">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-20">
+            {/* Left — image placeholder */}
+            <div className="bg-accent/60 rounded-xl min-h-[400px] md:min-h-[520px]" />
+
+            {/* Right — text + team grid */}
+            <div className="flex flex-col justify-center space-y-8">
+              <h2 className="text-3xl md:text-4xl font-display leading-tight">
+                {t("about.teamTitle")}
+              </h2>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                {lang === "sv"
+                  ? "Vårt team kombinerar djup erfarenhet inom compliance, teknik och reglerade branscher. Vi har byggt system för banker, advokatbyråer och fintechbolag — och vet vad som krävs för att göra kundkännedom rätt."
+                  : "Our team combines deep experience in compliance, technology, and regulated industries. We've built systems for banks, law firms, and fintech companies — and know what it takes to get customer due diligence right."}
+              </p>
+
+              <div className="w-full h-px bg-border" />
+
+              {/* Team members grid */}
+              <div className="grid grid-cols-3 gap-6">
+                {team.map((member, i) => (
+                  <div key={i} className="space-y-1">
+                    <p className="text-sm font-display">{member.name}</p>
+                    <p className="text-xs text-muted-foreground">{member.role}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
       <section className="py-16 md:py-24">
         <div className="container max-w-3xl">
-          <h2 className="text-2xl font-normal mb-8">{t("about.teamTitle")}</h2>
-          <div className="grid sm:grid-cols-3 gap-6 mb-16">
-            {team.map((member, i) => (
-              <div key={i} className="text-center space-y-3">
-                <div className="w-20 h-20 rounded-full bg-muted mx-auto flex items-center justify-center">
-                  <GeometricMotif className="w-12 h-12 opacity-50" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium">{member.name}</p>
-                  <p className="text-xs text-muted-foreground">{member.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Contact */}
           <div id="contact" className="bg-card border rounded-lg p-8">
             <h2 className="text-lg font-medium mb-2">{t("nav.contact")}</h2>
             <p className="text-sm text-muted-foreground">info@knownid.io</p>
