@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Pill from "@/components/Pill";
 import GeometricMotif from "@/components/GeometricMotif";
+import WireframeMesh from "@/components/WireframeMesh";
 import { Scale, MessageSquareQuote, ShieldCheck, Zap, BarChart3, Globe, Briefcase, Search, TrendingUp } from "lucide-react";
 import legalMeetingImg from "@/assets/legal-meeting.png";
 import type { LucideIcon } from "lucide-react";
@@ -172,16 +173,27 @@ const IndustryPage = () => {
     <>
       {/* Hero */}
       <section className="relative flex flex-col overflow-hidden" style={{ minHeight: "calc(100svh - 4rem)" }}>
-        <div
-          className="absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage:
-              "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="absolute top-[15%] right-[10%] w-[300px] h-[300px] rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute bottom-[20%] left-[5%] w-[200px] h-[200px] rounded-full bg-accent/30 blur-2xl" />
+        {slug === "legal" ? (
+          <>
+            <div className="absolute inset-0">
+              <WireframeMesh />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+          </>
+        ) : (
+          <>
+            <div
+              className="absolute inset-0 opacity-[0.07]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
+                backgroundSize: "60px 60px",
+              }}
+            />
+            <div className="absolute top-[15%] right-[10%] w-[300px] h-[300px] rounded-full bg-primary/5 blur-3xl" />
+            <div className="absolute bottom-[20%] left-[5%] w-[200px] h-[200px] rounded-full bg-accent/30 blur-2xl" />
+          </>
+        )}
 
         <div className="container relative z-10 flex flex-col flex-1 py-10">
           <Link to="/industries" className="text-sm text-muted-foreground hover:text-foreground transition-colors mb-6 inline-block opacity-0 animate-fade-in">
