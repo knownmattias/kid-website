@@ -52,7 +52,7 @@ const Header = () => {
                 </Link>
                 {industriesOpen && (
                   <div className="absolute top-full left-0 pt-2 z-50">
-                    <div className="bg-background border rounded-xs shadow-sm py-2 min-w-[180px]">
+                    <div className="bg-background border rounded-sm shadow-sm py-2 min-w-[180px]">
                       {industryKeys.map((key) => (
                         <Link
                           key={key}
