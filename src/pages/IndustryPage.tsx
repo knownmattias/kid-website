@@ -78,13 +78,28 @@ const IndustryPage = () => {
   return (
     <>
       {/* Hero */}
-      <section className="py-16 md:py-28 bg-muted/50">
-        <div className="container max-w-3xl">
-          <Link to="/industries" className="text-sm text-muted-foreground hover:text-foreground transition-colors mb-6 inline-block">
+      <section className="relative flex flex-col overflow-hidden" style={{ minHeight: "calc(100svh - 4rem)" }}>
+        <div className="container relative z-10 flex flex-col flex-1 py-10">
+          <Link to="/industries" className="text-sm text-muted-foreground hover:text-foreground transition-colors mb-6 inline-block opacity-0 animate-fade-in">
             ← {t("industries.title")}
           </Link>
-          <h1 className="text-3xl md:text-4xl font-normal mb-4">{t(`industries.${slug}.hero`)}</h1>
-          <p className="text-lg text-muted-foreground">{t(`industries.${slug}.short`)}</p>
+          <div className="space-y-5 max-w-2xl opacity-0 animate-fade-in">
+            <h1>
+              <span className="text-foreground">{t(`industries.${slug}.hero`)}</span>
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground leading-snug max-w-lg opacity-0 animate-fade-in-delay">
+              {t(`industries.${slug}.short`)}
+            </p>
+          </div>
+        </div>
+        {/* Full-width background image */}
+        <div className="w-full mt-auto opacity-0 animate-fade-in-delay" style={{ animationDelay: "0.4s" }}>
+          <img
+            src={legalMeetingImg}
+            alt="Legal professionals in meeting"
+            className="w-full h-[280px] md:h-[400px] object-cover"
+            loading="eager"
+          />
         </div>
       </section>
 
@@ -211,17 +226,6 @@ const IndustryPage = () => {
         );
       })()}
 
-      {/* Full-width legal image */}
-      {slug === "legal" && (
-        <div className="w-full">
-          <img
-            src={legalMeetingImg}
-            alt="Law firm meeting room"
-            className="w-full h-[300px] md:h-[450px] object-cover"
-            loading="lazy"
-          />
-        </div>
-      )}
 
       {/* Insights section for legal */}
       {slug === "legal" && (() => {
