@@ -47,12 +47,12 @@ const About = () => {
       {/* Team */}
       <section className="py-24 md:py-32">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-10 md:gap-20">
+          <div className="grid md:grid-cols-5 gap-10 md:gap-16">
             {/* Left — image placeholder */}
-            <div className="bg-accent/60 rounded-xl min-h-[400px] md:min-h-[520px]" />
+            <div className="md:col-span-2 bg-accent/60 rounded-xl min-h-[400px] md:min-h-[520px]" />
 
             {/* Right — text + team grid */}
-            <div className="flex flex-col justify-center space-y-8">
+            <div className="md:col-span-3 flex flex-col justify-center space-y-8">
               <h2 className="text-3xl md:text-4xl font-display leading-tight">
                 {t("about.teamTitle")}
               </h2>
