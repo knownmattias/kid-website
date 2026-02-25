@@ -107,51 +107,6 @@ const IndustryPage = () => {
         </div>
       </section>
 
-      {/* Full-width legal image */}
-      {slug === "legal" && (
-        <div className="w-full">
-          <img
-            src={legalMeetingImg}
-            alt="Law firm meeting room"
-            className="w-full h-[300px] md:h-[450px] object-cover"
-            loading="lazy"
-          />
-        </div>
-      )}
-
-      {/* Pain points + outcomes */}
-      <section className="py-16 md:py-24">
-        <div className="container max-w-3xl">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-lg font-medium mb-4">
-                {lang === "sv" ? "Utmaningar" : "Challenges"}
-              </h2>
-              <ul className="space-y-3">
-                {pains.map((pain, i) => (
-                  <li key={i} className="text-sm text-muted-foreground leading-relaxed flex gap-2">
-                    <span className="text-primary mt-0.5 shrink-0">—</span>
-                    {pain}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="text-lg font-medium mb-4">
-                {lang === "sv" ? "Resultat" : "Outcomes"}
-              </h2>
-              <ul className="space-y-3">
-                {outcomes.map((outcome, i) => (
-                  <li key={i} className="text-sm text-muted-foreground leading-relaxed flex gap-2">
-                    <span className="text-primary mt-0.5 shrink-0">✓</span>
-                    {outcome}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Legal-specific value section */}
       {slug === "legal" && (
@@ -206,6 +161,18 @@ const IndustryPage = () => {
             </div>
           </div>
         </section>
+      )}
+
+      {/* Full-width legal image */}
+      {slug === "legal" && (
+        <div className="w-full">
+          <img
+            src={legalMeetingImg}
+            alt="Law firm meeting room"
+            className="w-full h-[300px] md:h-[450px] object-cover"
+            loading="lazy"
+          />
+        </div>
       )}
 
       {/* Stats banner — legal only */}
