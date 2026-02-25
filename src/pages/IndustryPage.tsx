@@ -79,6 +79,19 @@ const IndustryPage = () => {
     <>
       {/* Hero */}
       <section className="relative flex flex-col overflow-hidden" style={{ minHeight: "calc(100svh - 4rem)" }}>
+        {/* Grid background graphic */}
+        <div
+          className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        {/* Floating accent circles */}
+        <div className="absolute top-[15%] right-[10%] w-[300px] h-[300px] rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute bottom-[20%] left-[5%] w-[200px] h-[200px] rounded-full bg-accent/30 blur-2xl" />
+
         <div className="container relative z-10 flex flex-col flex-1 py-10">
           <Link to="/industries" className="text-sm text-muted-foreground hover:text-foreground transition-colors mb-6 inline-block opacity-0 animate-fade-in">
             ← {t("industries.title")}
@@ -92,16 +105,19 @@ const IndustryPage = () => {
             </p>
           </div>
         </div>
-        {/* Full-width background image */}
-        <div className="w-full mt-auto opacity-0 animate-fade-in-delay" style={{ animationDelay: "0.4s" }}>
+      </section>
+
+      {/* Full-width legal image */}
+      {slug === "legal" && (
+        <div className="w-full">
           <img
             src={legalMeetingImg}
-            alt="Legal professionals in meeting"
-            className="w-full h-[280px] md:h-[400px] object-cover"
-            loading="eager"
+            alt="Law firm meeting room"
+            className="w-full h-[300px] md:h-[450px] object-cover"
+            loading="lazy"
           />
         </div>
-      </section>
+      )}
 
       {/* Pain points + outcomes */}
       <section className="py-16 md:py-24">
