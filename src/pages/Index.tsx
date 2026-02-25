@@ -202,7 +202,7 @@ const Index = () => {
           <div className="md:col-span-2 bg-accent/60 min-h-[320px] md:min-h-full" />
 
           {/* Right — text 60% */}
-          <div className="md:col-span-3 bg-accent/30 p-6 md:p-10 flex flex-col justify-between">
+          <div className="md:col-span-3 bg-accent/30 p-4 md:p-7 flex flex-col justify-between">
             <div className="space-y-4">
               <h2 className="text-2xl md:text-3xl font-display leading-tight">{t("howItWorks.title")}</h2>
               <div className="space-y-5">
