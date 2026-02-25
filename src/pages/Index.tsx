@@ -202,16 +202,21 @@ const Index = () => {
           <div className="md:col-span-2 bg-accent/60 min-h-[320px] md:min-h-full" />
 
           {/* Right — text 60% */}
-          <div className="md:col-span-3 bg-accent/30 p-10 md:p-16 lg:p-20 flex flex-col justify-center space-y-6">
-            <Pill className="self-start">{lang === "sv" ? "Så funkar det" : "How it works"}</Pill>
-            <h2 className="text-2xl md:text-3xl font-display leading-tight">{t("howItWorks.title")}</h2>
-            <div className="space-y-5 pt-2">
-              {steps.map((step, i) => (
-                <div key={i}>
-                  <h3 className="text-base font-display">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mt-1">{step.desc}</p>
-                </div>
-              ))}
+          <div className="md:col-span-3 bg-accent/30 p-6 md:p-10 flex flex-col justify-between">
+            <div className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-display leading-tight">{t("howItWorks.title")}</h2>
+              <div className="space-y-5">
+                {steps.map((step, i) => (
+                  <div key={i}>
+                    <h3 className="text-base font-display">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-1">{step.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="pt-8">
+              <p className="text-sm font-display">Martina Etemad</p>
+              <p className="text-xs text-muted-foreground">Co-founder</p>
             </div>
           </div>
         </div>
