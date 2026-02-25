@@ -248,17 +248,6 @@ const IndustryPage = () => {
         );
       })()}
 
-      {/* Case block */}
-      <section className="py-16 md:py-20 bg-muted/50">
-        <div className="container max-w-3xl">
-          <div className="bg-background border rounded-lg p-8">
-            <h3 className="text-lg font-medium mb-3">{t(`industries.${slug}.caseTitle`)}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              {t(`industries.${slug}.caseText`)}
-            </p>
-          </div>
-        </div>
-      </section>
     </>
   );
 };
