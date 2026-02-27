@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import Pill from "@/components/Pill";
 import GeometricMotif from "@/components/GeometricMotif";
 import WireframeMesh from "@/components/WireframeMesh";
+import FloatingPills from "@/components/FloatingPills";
 import { Scale, MessageSquareQuote, ShieldCheck, Zap, BarChart3, Globe, Briefcase, Search, TrendingUp } from "lucide-react";
 import legalMeetingImg from "@/assets/legal-meeting.png";
 import type { LucideIcon } from "lucide-react";
@@ -179,6 +180,7 @@ const IndustryPage = () => {
               <WireframeMesh />
             </div>
             <div className="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-transparent" />
+            <FloatingPills />
           </>
         ) : (
           <>
