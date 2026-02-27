@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ContactSection } from "@/components/ContactForm";
+
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { HeroGeometric } from "@/components/GeometricMotif";
@@ -365,8 +365,6 @@ const Index = () => {
         </div>
       </RevealSection>
 
-      {/* Contact form */}
-      <ContactSection />
     </>
   );
 };
