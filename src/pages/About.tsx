@@ -18,8 +18,8 @@ const About = () => {
               {t("about.title")}
             </h2>
             <div className="space-y-6">
-              <p className="text-base text-muted-foreground leading-relaxed">{t("about.story")}</p>
-              <p className="text-base text-muted-foreground leading-relaxed">{t("about.storyP2")}</p>
+              <p className="text-base text-muted-foreground">{t("about.story")}</p>
+              <p className="text-base text-muted-foreground">{t("about.storyP2")}</p>
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@ const About = () => {
               {values.map((v, i) => (
                 <div key={i}>
                   <h3 className="text-base font-display">{v.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mt-1">{v.desc}</p>
+                  <p className="text-sm text-muted-foreground mt-1">{v.desc}</p>
                 </div>
               ))}
             </div>
@@ -56,7 +56,7 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-display leading-tight">
                 {t("about.teamTitle")}
               </h2>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground">
                 {lang === "sv"
                   ? "Vårt team kombinerar djup erfarenhet inom compliance, teknik och reglerade branscher. Vi har byggt system för banker, advokatbyråer och fintechbolag — och vet vad som krävs för att göra kundkännedom rätt."
                   : "Our team combines deep experience in compliance, technology, and regulated industries. We've built systems for banks, law firms, and fintech companies — and know what it takes to get customer due diligence right."}
