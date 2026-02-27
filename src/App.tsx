@@ -13,6 +13,7 @@ import IndustryPage from "./pages/IndustryPage";
 import About from "./pages/About";
 import Legal from "./pages/Legal";
 import LegalDocument from "./pages/LegalDocument";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/legal" element={<Legal />} />
               <Route path="/legal/:slug" element={<LegalDocument />} />
+              <Route path="/contact" element={<Contact />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
