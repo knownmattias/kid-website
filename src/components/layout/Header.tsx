@@ -91,7 +91,7 @@ const Header = () => {
           <Link to="/about#contact">
             <Button variant="ghost" size="sm">{t("nav.contact")}</Button>
           </Link>
-          <Link to="/#demo">
+          <Link to="/#contact">
             <Button variant="hero" size="sm">{t("nav.bookDemo")}</Button>
           </Link>
         </div>
@@ -127,7 +127,7 @@ const Header = () => {
               >
                 {lang === "sv" ? "EN" : "SV"}
               </button>
-              <Link to="/#demo" onClick={() => setMobileOpen(false)}>
+              <Link to="/#contact" onClick={() => setMobileOpen(false)}>
                 <Button variant="hero" size="sm">{t("nav.bookDemo")}</Button>
               </Link>
             </div>
