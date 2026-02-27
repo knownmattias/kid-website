@@ -80,7 +80,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans leading-snug;
+    @apply bg-background text-foreground font-sans leading-tight;
     letter-spacing: -0.01em;
     font-weight: 300;
   }
