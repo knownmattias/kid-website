@@ -10,8 +10,8 @@ const FloatingPills = () => {
     let key = 0;
     const show = () => {
       const text = PILLS[Math.floor(Math.random() * PILLS.length)];
-      const x = 10 + Math.random() * 70; // 10-80% from left
-      const y = 50 + Math.random() * 35; // 50-85% from top (below text area)
+      const x = 50 + Math.random() * 40; // 50-90% from left (right side)
+      const y = 10 + Math.random() * 55; // 10-65% from top
       setCurrent({ text, x, y, key: key++ });
     };
 
