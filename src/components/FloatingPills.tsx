@@ -29,7 +29,7 @@ const FloatingPills = () => {
       <span
         key={current.key}
         className={cn(
-          "absolute inline-block border border-border/40 rounded-full px-4 py-1.5 text-[10px] text-muted-foreground/50 font-normal uppercase tracking-widest",
+          "absolute inline-block border border-border/40 rounded-full px-4 py-1.5 text-[10px] text-muted-foreground/50 font-normal uppercase tracking-widest bg-card",
           "animate-[pillFade_2.6s_ease-in-out_forwards]"
         )}
         style={{ left: `${current.x}%`, top: `${current.y}%` }}
