@@ -14,6 +14,7 @@ import About from "./pages/About";
 import Legal from "./pages/Legal";
 import LegalDocument from "./pages/LegalDocument";
 import Contact from "./pages/Contact";
+import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
               <Route path="/industries" element={<Industries />} />
               <Route path="/industries/:slug" element={<IndustryPage />} />
               <Route path="/about" element={<About />} />
+              <Route path="/login" element={<Login />} />
               <Route path="/legal" element={<Legal />} />
               <Route path="/legal/:slug" element={<LegalDocument />} />
             </Route>

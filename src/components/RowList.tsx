@@ -10,9 +10,10 @@ export interface RowItem {
 
 interface RowListProps {
   items: RowItem[];
+  staggerReveal?: boolean;
 }
 
-const RowList = ({ items }: RowListProps) => (
+const RowList = ({ items, staggerReveal = false }: RowListProps) => (
   <div className="divide-y divide-border border-y border-border">
     {items.map((item, i) => {
       const content = (
@@ -31,14 +32,15 @@ const RowList = ({ items }: RowListProps) => (
         </>
       );
 
-      const cls = "grid md:grid-cols-2 gap-4 py-6 md:py-7 group";
+      const cls = `grid md:grid-cols-2 gap-4 py-6 md:py-7 group ${staggerReveal ? "row-list-row" : ""}`;
+      const style = staggerReveal ? { transitionDelay: `${i * 80}ms` } : undefined;
 
       return item.href ? (
-        <Link key={i} to={item.href} className={cls}>
+        <Link key={i} to={item.href} className={cls} style={style}>
           {content}
         </Link>
       ) : (
-        <div key={i} className={cls}>
+        <div key={i} className={cls} style={style}>
           {content}
         </div>
       );

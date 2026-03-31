@@ -10,7 +10,7 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
 
-  const industryKeys = ["legal", "fintech", "ma"] as const;
+  const industryKeys = ["legal", "fintech", "other"] as const;
 
   const navItems = [
     { label: t("nav.product"), href: "/#product" },
@@ -27,8 +27,20 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-xl">
       <div className="container flex items-center h-16">
-        <Link to="/" className="text-lg font-display font-normal tracking-tight" onClick={() => setMobileOpen(false)}>
-          KnownID
+        <Link
+          to="/"
+          className="flex items-center shrink-0 py-1"
+          onClick={() => setMobileOpen(false)}
+          aria-label="knownID — home"
+        >
+          <img
+            src="/logos/knownid.png"
+            alt="knownID"
+            className="h-5 w-auto dark:invert md:translate-y-[1px]"
+            width={140}
+            height={28}
+            decoding="async"
+          />
         </Link>
 
         {/* Desktop nav — closer to logo */}
@@ -88,7 +100,7 @@ const Header = () => {
           >
             {lang === "sv" ? "EN" : "SV"}
           </button>
-          <Link to="/contact">
+          <Link to="/login">
             <Button variant="ghost" size="sm">{t("nav.contact")}</Button>
           </Link>
           <Link to="/contact">

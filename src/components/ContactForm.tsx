@@ -9,11 +9,15 @@ const subjectOptions = {
   en: ["General inquiry", "Book a demo", "Pricing", "Partnership"],
 };
 
+const CONTACT_FORMSUBMIT_TOKEN = "846e1b8e06b809bb0dc6b4769c083124";
+
 const ContactForm = () => {
   const { lang } = useLanguage();
   const l = (lang as "sv" | "en") || "sv";
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [form, setForm] = useState({
     subject: "",
     email: "",
@@ -27,9 +31,42 @@ const ContactForm = () => {
   const update = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm((prev) => ({ ...prev, [field]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const payload = {
+        _subject: `${form.subject || (l === "sv" ? "Kontaktförfrågan" : "Contact inquiry")} - KnownID`,
+        subject: form.subject,
+        email: form.email,
+        firstName: form.firstName,
+        lastName: form.lastName,
+        company: form.company,
+        title: form.title,
+        message: form.message,
+      };
+
+      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_FORMSUBMIT_TOKEN}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError(l === "sv" ? "Något gick fel. Försök igen." : "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -92,10 +129,12 @@ const ContactForm = () => {
 
       <button
         type="submit"
+        disabled={isSubmitting}
         className="text-sm font-display text-foreground border-b border-foreground pb-0.5 hover:text-primary hover:border-primary transition-colors"
       >
-        {l === "sv" ? "Skicka" : "Send"}
+        {isSubmitting ? (l === "sv" ? "Skickar..." : "Sending...") : l === "sv" ? "Skicka" : "Send"}
       </button>
+      {submitError && <p className="text-sm text-destructive">{submitError}</p>}
     </form>
   );
 };

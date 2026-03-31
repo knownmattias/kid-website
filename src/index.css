@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Animated background dots — one visible at a time, fade in/out */
+@keyframes dot-appear {
+  0%, 100% { opacity: 0; transform: scale(0.6); }
+  12% { opacity: 0; transform: scale(0.6); }
+  28% { opacity: 0.7; transform: scale(1); }
+  45% { opacity: 0.7; transform: scale(1); }
+  62% { opacity: 0; transform: scale(0.6); }
+  100% { opacity: 0; transform: scale(0.6); }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -112,6 +122,19 @@
 }
 
 @layer utilities {
+  .animate-dot-appear {
+    animation: dot-appear 8s ease-in-out infinite;
+  }
+
+  @keyframes trust-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-trust-marquee {
+    animation: trust-marquee 25s linear infinite;
+  }
+
   .section-reveal {
     opacity: 0;
     transform: translateY(24px);
@@ -119,6 +142,28 @@
   }
 
   .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .product-suite-row {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+  }
+
+  .section-reveal.visible .product-suite-row {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .row-list-row {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+  }
+
+  .section-reveal.visible .row-list-row {
     opacity: 1;
     transform: translateY(0);
   }

@@ -1,4 +1,4 @@
-export const translations: Record<string, any> = {
+export const translations: Record<string, unknown> = {
   sv: {
     nav: {
       product: "Produkt",
@@ -11,27 +11,154 @@ export const translations: Record<string, any> = {
     hero: {
       headline: "Know your",
       rotatingWords: ["customers", "clients", "customers", "counterparties", "customers", "investors", "customers", "shareholders", "customers", "suppliers"],
-      subhead: "En samlad plattform för kundkännedom: säker datainsamling, smidigt samarbete och revisionsklara arbetsflöden.",
+      subhead: "Kundkännedom behöver inte vara tidskrävande och krångligt. Förenkla för samtliga parter med KnownID:s plattform.",
       cta: "Prata med oss",
       secondary: "Se hur det fungerar",
     },
     trust: {
-      label: "Trusted by",
+      label: "Trusted by companies\nin a range of industries",
+    },
+    login: {
+      title: "Logga in",
+      company: {
+        heading: "För dig som arbetar på ett företag",
+        desc: "Logga in till KnownID-plattformen för att hantera kundkännedom, granskningar och uppföljning.",
+        cta: "Logga in",
+        url: "https://app.knownid.io",
+      },
+      individual: {
+        heading: "För dig som svarar på KYC som individ",
+        desc: "Fyll i och hantera KYC-frågor som skickats till dig som privatperson eller nyckelperson.",
+        cta: "Öppna portalen",
+        url: "https://portal.knownid.io",
+      },
+      training: {
+        heading: "För dig som ska genomgå utbildning",
+        desc: "Gå till utbildningsportalen för KYC- och AML-kurser.",
+        cta: "Gå till utbildning",
+        url: "https://training.knownid.io",
+      },
+    },
+    index: {
+      cardLabels: ["Reglerade företag", "Den som svarar", "Nyckelpersoner"],
+      heroLegal: { pill: "Jurist- och advokatbyråer", title: "För advokat- och juristbyråer" },
+      heroFintech: { pill: "Reglerade bolag", title: "Plattform anpassad till er bransch" },
+      explore: "Utforska",
+      productPlaceholder: {
+        heading: "Är ni redo för 2027?",
+        body: "2027 träder EU:s nya AML-paket i kraft, med både nya förordningar och direktiv. Kraven innebär att reglerade bolag måste förändra hur man gör kundkännedom. Vårt system är redan anpassat för de nya kraven.",
+      },
+      platform: {
+        pill: "Plattformen",
+        title: "Byggd för flexibilitet och regelefterlevnad",
+        desc: "En robust och flexibel arkitektur som säkerställer att varje steg i KYC-processen görs enligt lagkrav, men samtidig är smidig och enkel.",
+        features: [
+          { title: "Strukturerad information", desc: "Sammankoppla, organisera och spara komplex kundinformation i en tydlig, enhetlig struktur." },
+          { title: "Standardiserade mallar", desc: "Använd och anpassa kundkännedomsmallar som är mappade mot EU:s regelverk just för er bransch."},
+          { title: "Anpassning till era risker", desc: "Anpassa processer och mallar efter risker er allmäna riskbedömning i enlighet med lagkrav. " },
+          { title: "Automatisk datainsamling", desc: "Samla in och verifiera information från offentliga register utan några integrationer." },
+          { title: "Fullständig spårbarhet", desc: "Komplett historik över varje ändring och beslut, transparent och redo för granskning." },
+          { title: "Enklare för motparter", desc: "Ge dina motparter en mer användarvänlig KYC-resa och undvika kostsamma slarvfel från dem." },
+        ],
+      },
+      security: {
+        pill: "Säkerhet & integritet",
+        statement: "Designad med dataskydd i åtanke. Vi vet hur knepigt det kan vara att navigera mellan att skydda personuppgifter och hantera KYC effektivt. Därför har vi designat KnownID med detta i åtanke från början.",
+        stats: [
+          { stat: "Säker delning av personuppgifter", desc: "Sluta att begära in känsliga personuppgifter via e-post. Ta del av personuppgifter krypterat och säkert." },
+          { stat: "Isolera personuppgifter", desc: "Begränsa tillgång till personuppgifter genom att lagra uppgifter direkt i vår plattform med säker åtkomsthantering." },
+          { stat: "Automatisera gallring", desc: "Automatisera gallring av personuppgifter enligt lagkrav - ställ in och gallra personuppgifter fem år efter avslutad affärsförbindelse." },
+          { stat: "Transparens för nyckelpersoner", desc: "Nyckelpersoner har möjlighet att följa hur deras personuppgifter delas och vem som har tagit del av dessa." },
+        ],
+      },
+      productSuite: {
+        title: "Produktsviten",
+        columns: [
+          {
+            columnTitle: "Onboarding KYC",
+            items: [
+              { text: "Kartläggning av regelverk", tooltip: "Stegvist onboardingflöde kartlagt mot svenska lagar och branchrekommendationer." },
+              { text: "Mallformulär", tooltip: "Välj bland våra färdiga onboarding-formulär som är utarbetade efter branchrekommendationer och EU-lagstiftning, och etablerade mallar såsom Wolfsbergs CBDDQ." },
+              { text: "Skräddarsydda onboarding-formulär", tooltip: "Skapa skräddarsydda onboarding-formulär som är anpassade för ditt företag. Vi hjälper dig att se till att de svarar mot regulatoriska krav." },
+              { text: "Kontrollera id-handlingar", tooltip: "Digital kontroll av id-handling eller välj biometrisk verifiering för ökad säkerhet." },
+              { text: "Kontrollera genom Bank-id", tooltip: "Verifiera personer med elektronisk legitimation, för närvarande stöder vi Sverige (BankID) och Danmark (MitID) med fler länder framöver." },
+              { text: "Kontrollera företag", tooltip: "Kontrollera företag manuellt eller automatiskt direkt mot Bolagsverket och Skatteverket." },
+              { text: "Kontrollera företrädare", tooltip: "Kontrollera företrädare manuellt eller automatiskt. Verifiera firmatecknare automatiskt mot Bolagsverket." },
+              { text: "Kontrollera verklig huvudman", tooltip: "Identifiera och kontrollera verklig huvudman mot registret över verkliga huvudmän." },
+              { text: "Sanktionsscreening", tooltip: "Screena företag, nyckelpersoner och närstående parter med flexibla screeningsinställningar." },
+              { text: "PEP-screening", tooltip: "Screena nyckelpersoner och närstående parter med flexibla screeningsinställningar som är framtagna enligt FATF-taxonomi." },
+              { text: "Adverse media-screening", tooltip: "Screena företag, nyckelpersoner och närstående parter med flexibla screeningsinställningar som är framtagna enligt FATF-taxonomi." },
+              { text: "Screening mot bevakningslistor", tooltip: "Screena företag, nyckelpersoner och närstående mot en rad fördefinierade watchlists." },
+              { text: "Högrisktredjeland-screening", tooltip: "Screena eventuella kopplingar till länder mot EU-kommissionens lista över högrisktredjeländer i enlighet med penningtvättslagen." },
+              { text: "Granskningslogg", tooltip: "Dokumentera onboarding-flödet med möjlighet att ladda ner en PDF-kopia för att dela med revisorer eller tillsynsmyndigheter." },
+              { text: "Bedöm risken", tooltip: "Genomför riskbedömning och ställ in initiala risknivåer för onboarding, dokumentera bedömning." },
+            ],
+          },
+          {
+            columnTitle: "Monitoring KYC",
+            items: [
+              { text: "Hantera utredningar", tooltip: "Samla alla ärenden på ett ställe. Bli notifierad om förändringar, undersök, analysera, dokumentera och eskalera. Delegera utredningar. Allt som görs sparas i en granskningslogg." },
+              { text: "Eskalera utredningar", tooltip: "Eskalera utredningar till andra försvarslinjen. Tilldela roller för eskalering efter behov." },
+              { text: "Anpassa screening-inställningar", tooltip: "Skräddarsy screening just efter dina specifika krav. Välj från olika listor, justera fuzziness och vem du vill screena." },
+              { text: "PEP-screening i realtid", tooltip: "Övervaka nyckelperson mot listor över personer i politisk utsatt ställning (PEP-listor). Inkluderar även screening mot familjemedlemmar och kända medarbetare. Övervakningen sker i realtid och du aviseras omedelbart vid eventuella träffar." },
+              { text: "Sanktionsscreening i realtid", tooltip: "Övervaka mot sanktionslistor som uppdateras dagligen. Realtidsscreening säkerställer att du omedelbart aviseras om eventuella träffar." },
+              { text: "Adverse media-screening i realtid", tooltip: "Övervaka bolag, personer och närstående mot adverse media framtagen efter FATF:s taxonomi. Mediekällorna är nationella, regionala och lokala från hela världen och uppdateras dagligen." },
+              { text: "Screening mot bevakningslistor i realtid", tooltip: "Håll dig uppdaterad med hjälp av globala (t.ex. Interpols lista över efterlysta personer) och lokala (t.ex. Spelinspektionens lista över förbjudna spelbolag) bevakningslistor. Välj vem du önskar att övervaka." },
+              { text: "Högrisktredjelandsövervakning", tooltip: "Övervaka landskopplingar mot EU-kommissionens lista över högrisktredjeländer. Välj om du endast vill övervaka landet där motparten är etablerad, eller även andra länder. Bli aviserad om en landskoppling blir tillagd på EU:s lista." },
+              { text: "Dataövervakning i realtid", tooltip: "Övervaka kontinuerligt motpartsdata mot offentliga källor och få aviseringar om viktiga dataändringar. Anpassa vilka datapunkter som ska övervakas." },
+              { text: "Screeningshistorik och granskningslogg", tooltip: "Upprätthåll en omfattande granskningslogg som bevisar att du lever upp till lagkrav och som kan visas upp för revisorer och tillsynsmyndigheter vid behov." },
+            ],
+          },
+          {
+            columnTitle: "Periodic KYC",
+            items: [
+              { text: "Riskbaserad periodisk granskning", tooltip: "Standardisera dina periodiska granskningar baserad på risknivåer och inställda intervall. Gör ändringar för en enskild motpart vid behov. Förändringar i risknivåer ändrar automatiskt schemaläggning för periodiska granskningar." },
+              { text: "Mallar för periodisk granskning", tooltip: "Välj mellan branschanpassade frågeformulär anpassade till svensk och EU-lagstiftning. Använda samma frågeformulär som vid onboarding, utan att göra det tidskrävande för motparten att svara." },
+              { text: "Anpassade formulär för periodisk granskning", tooltip: "Skapa skräddarsydda periodiska granskningsformulär, anpassade efter just dina risker och behov." },
+              { text: "Hantera olika versioner av formulär", tooltip: "Hantera enkelt olika versioner av KYC-formulär. Uppdatera formulär vid behov och implementera nya versioner sömlöst för alla motparter." },
+              { text: "Automatisera utskick", tooltip: "Schemalägg och skicka automatiskt ut periodiska granskningsformulär i enlighet med dina inställningar." },
+              { text: "Automatiska påminnelser", tooltip: "Se till att få svar från motparten genom automatiska påminnelser, samtidigt som du slipper att jaga motparter över mail. Se till att allt finns på plats när det är dags att påbörja periodisk granskning." },
+              { text: "Få hjälp med granskningen", tooltip: "Jämför nuvarande svar med tidigare svar och information som samlats in under onboarding. Vi markerar förändringar av svar, så att du kan spendera tid med att analysera eventuella nya risker." },
+              { text: "Stöd för ad hoc-periodisk granskning", tooltip: "Påbörja nya granskningar som svar på externa händelser eller förändringar i din verksamhet." },
+              { text: "Granskningslogg", tooltip: "Upprätthåll en omfattande granskningslogg (som innehåller periodiska granskningar) som bevisar att du lever upp till lagkrav och som kan visas upp för revisorer och tillsynsmyndigheter vid behov." },
+            ],
+          },
+          {
+            columnTitle: "Counterparties",
+            items: [
+              { text: "Omedelbar överblick", tooltip: "Få omedelbar överblick över dina motparter. Spåra, hantera och lagra motparternas information under hela deras livscykel." },
+              { text: "Integrerad mot offentlig data", tooltip: "Få tillgång till offentliga datakällor och komplettera med information direkt från motparten, för att få en heltäckande bild." },
+              { text: "Nyckelpersoner", tooltip: "Hantera nyckelpersoner kopplade till ett företag. Lägg till personkopplingar, ta bort och övervaka." },
+              { text: "Närstående bolag", tooltip: "Förbättra din förståelse och minska riskerna genom att länka exempelvis moderbolag eller aktieägare till en motpart." },
+              { text: "Justera data manuellt", tooltip: "Redigera motpartsdata manuellt efter behov för att säkerställa att datan är korrekt och fullständig." },
+              { text: "Justera risknivåer", tooltip: "Justera risknivåer manuellt. Se tidigare förändringar av risknivåer och riskbedömningar." },
+              { text: "Stöd för alla typer av motparter", tooltip: "Hantera individer eller företag, oavsett om de är kunder, investerare, korrespondentförbindelser eller holdingbolag. Anpassa dina åtgärder baserat på vilken motpartstyp." },
+              { text: "Dokumentlagring", tooltip: "Ladda upp, spara och hantera dokument. Effektivisera dina processer och eliminera behovet av externa filhanteringssystem." },
+              { text: "Koppla dokument", tooltip: "Koppla dokument till motparter, nyckelpersoner och närstående bolag för att kunna möjliggöra att dokument som innehåller personuppgifter kan raderas vid behov." },
+              { text: "Säker motpartskommunikation", tooltip: "Kommunicera säkert och trygg direkt i plattformen genom säkra meddelanden. Eliminera behovet av att skicka känsliga information via e-post." },
+            ],
+          },
+        ],
+      },
     },
     value: {
       title: "En plattform. Hela KYC-processen.",
+      hero: {
+        title: "En plattform. Hela KYC-processen.",
+        desc: "En plattform för hela KYC-processen. Förenkla för er organisation, den som svarar och nyckelpersoner hos motparten, så som verklig huvudman. Tydliga steg genom hela processen för att göra enklare för alla.",
+      },
       cards: [
         {
-          title: "End-to-end KYC på ett ställe",
+          title: "Förenkla för alla inblandade",
           desc: "Samla all kundkännedom i ett flöde — från insamling och granskning till beslut och uppföljning. Slipp fragmenterade verktyg.",
         },
         {
-          title: "Mallar & skräddarsydda formulär",
-          desc: "Använd färdiga mallar eller skapa egna frågeformulär som passar er verksamhet och era regulatoriska krav.",
+          title: "Smidigare och korrekta svar",
+          desc: "Enklare att svara på kundkännedomsfrågor. Vi hjälper den som svarar genom ett digitalt flöde där vi hämtar information från offentliga register som säkerställer att informationen är korrekt. ",
         },
         {
-          title: "Screening & löpande bevakning",
-          desc: "Kontrollera motparter mot PEP-listor, sanktionsregister och negativ mediabevakning — automatiskt och löpande.",
+          title: "Enklare för nyckelpersoner",
+          desc: "Enkel identifiering genom bankID och andra digitala ID-lösningar i utlandet. Låt nyckelpersoner bara tillhandahålla informationen som berör dem, och låt någon annan på företaget fylla ut resten.",
         },
         {
           title: "Dokumentation & revisionsspår",
@@ -39,13 +166,10 @@ export const translations: Record<string, any> = {
         },
       ],
     },
-    howItWorks: {
-      title: "Tre steg till säker kundkännedom",
-      steps: [
-        { title: "Skapa flöde", desc: "Välj en mall eller bygg ert eget KYC-flöde med de kontroller ni behöver." },
-        { title: "Samla in data", desc: "Skicka till motparten och samla in uppgifter säkert — direkt i plattformen." },
-        { title: "Granska & följ upp", desc: "Fatta beslut, dokumentera och håll löpande koll med automatisk bevakning." },
-      ],
+    whyWeStarted: {
+      title: "KYC är trasigt. Vi startade KnownID i frustration. Som jurist såg jag hur orimligt mycket tid som lades på manuella processer, utan rätt verktyg för att säkerställa att allt gjordes på det sätt lagen kräver. Kundkännedom handlar om förtroende och förtjänar struktur och tydlighet. Vi bestämde oss för att göra det enklare att göra rätt.",
+      name: "Martina Etemad",
+      role: "Medgrundare",
     },
     insights: {
       title: "Insights",
@@ -81,11 +205,12 @@ export const translations: Record<string, any> = {
     },
     industries: {
       title: "Branscher",
-      subtitle: "KYC-krav varierar mellan branscher. Vi anpassar oss efter era specifika behov.",
+      subtitle: "Vår plattform är byggd för att vara flexibel och går att anpassa till en mängd olika branscher.  ",
+      floatingPills: ["riskbedömning", "uppföljning", "PEP-screening", "sanktionscreening"],
       legal: {
         name: "Juridik",
-        short: "Advokatbyråer och juridiska rådgivare hanterar känsliga klientrelationer som kräver rigorös kundkännedom.",
-        hero: "KYC för juridikbranschen",
+        short: "Vi vet hur snårigt det är att navigera kundkännedom för juristbyråer. Vilka ärenden omfattas? Är det en affärsförbindelse? Vi hjälper er på traven.",
+        hero: "KYC för jurister och advokater",
         pains: [
           "Komplexa ägarstrukturer och svåridentifierade UBO:er",
           "Tidskrävande manuell dokumentinsamling från klienter",
@@ -98,10 +223,16 @@ export const translations: Record<string, any> = {
         ],
         caseTitle: "Hur en mellanstor advokatbyrå halverade sin KYC-tid",
         caseText: "En byrå med 45 jurister gick från manuell e-posthantering till digitala KYC-flöden. Resultatet: 50 % kortare handläggningstid, nöjdare klienter och en revision som gick smärtfritt.",
+        insightsSectionTitle: "KYC genom hela livscykeln",
+        insightCards: [
+          { pill: "Onboarding KYC", title: "Enklare onboarding", excerpt: "Onboarda dina motparter digitalt med hjälp av färdiga frågeformulär. Samla in och verifiera information mot offentliga register. Gör riskbedömning i samma plattform." },
+          { pill: "Monitoring KYC", title: "Var trygg. 24/7", excerpt: "Övervaka kontinuerligt dina motparter. Automatisk screening mot PEP, sanktioner och adverse media i realtid. Bli aviserad vid förändringar i nyckeldata. Hantera utredningar." },
+          { pill: "Periodisk KYC", title: "Periodisk granskning", excerpt: "Schemalägg och skicka automatiskt ut periodiska granskningar baserat på aktuell risknivå. Analysera och förstå förändringar i motpartens profil." },
+        ],
       },
       fintech: {
         name: "Fintech",
-        short: "Snabbväxande fintechbolag behöver skala sin compliance utan att bromsa produktutvecklingen.",
+        short: "Väx utan att skala bromsa utan att bromsa produktutvecklingen. Säkerställ att du du samlar in KYC:n för samtliga flöden.",
         hero: "KYC för fintech",
         pains: [
           "Höga volymer av onboardingar som kräver snabb handläggning",
@@ -116,9 +247,9 @@ export const translations: Record<string, any> = {
         caseTitle: "En betalningsplattform som skalade KYC utan att anställa fler",
         caseText: "Ett fintechbolag med 200 000 användare automatiserade sin KYC-process och minskade manuell handläggning med 70 %, utan att kompromissa med regulatoriska krav.",
       },
-      ma: {
-        name: "M&A",
-        short: "Transaktionsrådgivare behöver snabb och tillförlitlig kundkännedom i tidspressade processer.",
+      other: {
+        name: "Övriga branscher",
+        short: "Vi arbetar med en rad olika branscher - allt från auktionsbolag till välgörenhetsorganisationer.",
         hero: "KYC för M&A",
         pains: [
           "Tidspressade processer där KYC blir en flaskhals",
@@ -135,21 +266,25 @@ export const translations: Record<string, any> = {
       },
     },
     about: {
+      heroHeading: "KnownID grundades efter att under flera år sett hur KYC-processer var osmidiga och otillräckliga. Både från ett användarperspektiv och utifrån vilka krav lagen ställer.",
       title: "Om KnownID",
+      taglineLine1: "KYC ska vara enkelt.",
+      taglineLine2: "Det behöver inte vara komplicerat.",
+      taglineBody: "Idag är KYC överallt. Och det frustrerar alla. Från dem som arbetar med det, till dem som ska svara på KYC-frågor, till dem som betalar för det. Idag är det för komplicerat, för ineffektivt och för dyrt. Det behöver förändras.",
       story: "KnownID grundades med en enkel insikt: kundkännedom borde inte vara krångligt. Vi bygger verktyg som gör KYC-processen transparent, säker och smidig — för både er och era motparter.",
       storyP2: "Vår plattform är byggd för team som tar compliance på allvar men som vägrar acceptera ineffektiva processer. Vi tror att rätt teknologi kan göra regelefterlevnad till en konkurrensfördel.",
       valuesTitle: "Våra värderingar",
       values: [
-        { title: "Privacy by design", desc: "Dataskydd är inte en funktion — det är en arkitekturprincip." },
-        { title: "Tydlighet", desc: "Komplexitet i regelverket ska inte betyda komplexitet i verktyget." },
-        { title: "Kontroll", desc: "Ni äger er data och era processer. Alltid." },
-        { title: "Samarbete", desc: "KYC fungerar bäst när alla parter kan bidra smidigt och säkert." },
+        { title: "Vi tror på djupa samarbeten", desc: "Vi tillhandahåller en plattform, men vi är inte som andra SaaS-bolag. Vi tror på djupa samarbeten, där vi bistår och assisterar i allt relaterat till KYC och AML. Genom djupa samarbeten kan vi lära av er, samtidigt som vi kan dela med oss av vår långa erfarenhet inom området." },
+        { title: "Göra det lättare att göra rätt", desc: "Vi vet att det är svårt att navigera det regulatoriska landskapet, som snabbt förändras med nya lagar, direktiv och förordningar. Vi förstår att alla inte kan vara AML-experter. Vår plattform är byggd för att det ska vara enklare att göra rätt, för alla inblandade." },
+        { title: "Bygga tillit i allt vi gör", desc: "Finansiell brottslighet är ett samhällsproblem. Vi tror att enda sättet att förhindra det är genom att bygga tillit i alla interaktioner, både mellan oss och våra kunder, men också genom att göra enklare att bygga tillit mellan våra kunder och deras kunder. " },
       ],
       teamTitle: "Teamet",
+      teamIntro: "Vi har tillsammans en mångårig erfarenhet från kundkännedom och penningtvätt i en rad olika branscher. Vi har arbetat med frågorna i allt från snabbskalande fintechs, till investeringsverksamheter, till försäkringsindustrin och på advokatbyrå.",
       team: [
-        { name: "Anna Lindqvist", role: "VD & grundare" },
-        { name: "Erik Johansson", role: "CTO" },
-        { name: "Sara Bergström", role: "Head of Compliance" },
+        { name: "Martina Etemad", role: "F.d. advokat och medgrundare" },
+        { name: "Mattias Lundkvist", role: "AML-expert och medgrundare" },
+        { name: "Egor Emelyanov", role: "CTO" },
       ],
     },
     demo: {
@@ -274,10 +409,115 @@ export const translations: Record<string, any> = {
       secondary: "See how it works",
     },
     trust: {
-      label: "Trusted by",
+      label: "Trusted by companies\nin a range of industries",
+    },
+    index: {
+      cardLabels: ["Regulated entities", "Responding party", "Individuals"],
+      heroLegal: { pill: "For legal", title: "For law firms and legal advisors" },
+      heroFintech: { pill: "For fintech", title: "For regulated companies" },
+      explore: "Explore",
+      productPlaceholder: {
+        heading: "Observations & Remarks",
+        body: "AI shows high-confidence growth: job postings, search rankings, and brand searches are all increasing significantly.",
+      },
+      platform: {
+        pill: "The platform",
+        title: "Built for precision and transparency",
+        desc: "A robust architecture ensuring every step of the KYC process is traceable, consistent, and audit-ready.",
+        features: [
+          { title: "Smart data architecture", desc: "Connects and organizes complex client information into one clear, unified structure." },
+          { title: "Automated workflows", desc: "Rule-driven processes ensuring consistency from data collection to final risk assessment." },
+          { title: "Standard definitions", desc: "Unified terms for risk, ownership structures, and beneficial owners — regardless of data source." },
+          { title: "Automatic data matching", desc: "Matching and cleaning data so different registries and sources work together seamlessly." },
+          { title: "Full tracking & audit trail", desc: "Complete history of every change and decision, transparent and audit-ready." },
+        ],
+      },
+      security: {
+        pill: "Security & privacy",
+        statement: "Your data is handled with the highest security. Encrypted storage, strict access control, and full GDPR compliance — so you can focus on business.",
+        stats: [
+          { stat: "100%", desc: "GDPR compliance at every step of the process." },
+          { stat: "AES-256", desc: "Encryption of all sensitive data, at rest and in transit." },
+          { stat: "SOC 2", desc: "Security standards meeting the strictest requirements." },
+          { stat: "0", desc: "Third parties with access to your clients' personal data." },
+        ],
+      },
+      productSuite: {
+        title: "Product suite",
+        columns: [
+          {
+            columnTitle: "Onboarding KYC",
+            items: [
+              { text: "Regulatory mapping", tooltip: "Step-by-step mapping against regulatory requirements, both laws and regulations. Mapping is currently only available against Swedish legislation." },
+              { text: "Template onboarding forms", tooltip: "Choose from our pre-designed onboarding forms, mapped against global recommendations and EU legislation. Also include established templates like Wolfsberg's CBDDQ." },
+              { text: "Custom onboarding forms", tooltip: "Create bespoke onboarding forms tailored to your business, fully adaptable. We help you ensure it's mapped against regulatory requirements." },
+              { text: "Physical ID verification", tooltip: "Verify individuals with physical identity documents or opt for biometric verification for added security." },
+              { text: "BankID verification", tooltip: "Verify individuals using electronic IDs, currently supporting Sweden (BankID) and Denmark (MitID), with more countries to come." },
+              { text: "Entity verification", tooltip: "Verify entities manually or automatically, currently supporting automatic verification for Swedish entities." },
+              { text: "Signatory verification", tooltip: "Confirm and verify signatories manually or automatically, currently supporting automatic verification for Swedish entities." },
+              { text: "UBO check and verification", tooltip: "Identify and verify Ultimate Beneficial Owners (UBOs), with automatic verification for Swedish entities." },
+              { text: "Sanction screening", tooltip: "Screen entities, connected key persons, and related parties with flexible screening settings." },
+              { text: "PEP screening", tooltip: "Screen natural persons, including connected persons, with flexible screening settings, aligned in FATF taxonomy." },
+              { text: "Adverse media screening", tooltip: "Screen entities, connected key persons, and related parties with flexible screening settings aligned in FATF taxonomy." },
+              { text: "Watchlist screening", tooltip: "Screen entities, connected key persons, and related parties against a range of predefined watchlists." },
+              { text: "High-risk country monitoring", tooltip: "Monitor your selection of applicable countries against the EU commission's list of high-risk third country lists in compliance with AMLD requirements." },
+              { text: "Audit trail", tooltip: "Maintain an audit trail documenting onboarding steps, with the option to download a PDF copy for sharing with auditors or regulators." },
+              { text: "Risk assessment", tooltip: "Conduct risk assessments and set initial onboarding risk levels, providing necessary descriptions as needed." },
+            ],
+          },
+          {
+            columnTitle: "Monitoring KYC",
+            items: [
+              { text: "Case management", tooltip: "Centralise all cases in one place. Receive notifications of suspicious activity, investigate, analyse, document, and escalate with a transparent audit trail. Easily dismiss false positives and assign cases to specific team members." },
+              { text: "Case escalation", tooltip: "Seamlessly escalate suspicious cases to the second line of defense and monitor the progress. Assign roles for escalation as needed." },
+              { text: "Custom screening settings", tooltip: "Tailor screening to your specific requirements. Choose from various lists and legislations, adjust fuzziness and objects to screen, and determine when to receive notifications." },
+              { text: "Live PEP screening", tooltip: "Globally screen Politically Exposed Persons (PEPs) and Relatives and Close Associates (RCAs) with daily updates. Screening occurs in real-time, and you'll be promptly notified of any potential hits." },
+              { text: "Live sanction screening", tooltip: "Globally monitor sanction lists, continuously updated daily. Real-time screening ensures immediate notification of any potential hits." },
+              { text: "Live adverse media screening", tooltip: "Monitor global negative media using FATF taxonomy across various national, regional, and local media sources worldwide, all in real-time with immediate notifications." },
+              { text: "Live watchlist screening", tooltip: "Keep an eye on both global (e.g., Interpol wanted list) and local (e.g., Sweden Gambling Authority Banned Companies) watchlists. Select objects to monitor." },
+              { text: "Live high-risk monitoring", tooltip: "Monitor against EU's commission's list of high-risk countries. Only monitor country of establishment, or select other countries. Be updated immediately once a new country is added." },
+              { text: "Live data monitoring", tooltip: "Continuously monitor counterparty data against public sources and receive notifications upon key data changes. Customise the data points to be monitored." },
+              { text: "Screening history and audit trail", tooltip: "Maintain a comprehensive screening log and audit trail to present to auditors and regulators, ensuring transparency and compliance." },
+            ],
+          },
+          {
+            columnTitle: "Periodic KYC",
+            items: [
+              { text: "Risk-driven periodic review schedules", tooltip: "Standardise periodic reviews based on risk levels and centrally set intervals. Override schedules for individual counterparties when necessary, with risk level changes triggering corresponding adjustments." },
+              { text: "Template periodic review forms", tooltip: "Choose from our pre-designed periodic review forms, aligned with global recommendations and EU legislation. Utilise the same forms as in onboarding while still maintaining a seamless experience for counterparties." },
+              { text: "Custom periodic review forms", tooltip: "Create bespoke periodic review forms tailored to your business needs with full adaptability." },
+              { text: "Form version management", tooltip: "Effortlessly manage versions of KYC forms. Update forms when necessary and seamlessly implement new versions across all counterparties." },
+              { text: "Automatic send-outs", tooltip: "Schedule and automatically send out periodic reviews forms according to your preferred frequency." },
+              { text: "Automatic reminders", tooltip: "Eliminate the need for manual follow-ups with automatic reminders, ensuring timely responses from counterparties. Ensure that you have what you need at the time you need it." },
+              { text: "Assisted reviews", tooltip: "Compare periodic review responses against previous data, including information gathered during onboarding. Monitor changes and identify high-risk answers and behaviours efficiently." },
+              { text: "Supports ad-hoc periodic reviews", tooltip: "Trigger new reviews for individual or groups of counterparties in response to external events or changes without delay." },
+              { text: "Audit trail", tooltip: "Maintain a comprehensive log and audit trail of periodic reviews, ready to present to auditors and regulators, guaranteeing transparency and compliance." },
+            ],
+          },
+          {
+            columnTitle: "Counterparties",
+            items: [
+              { text: "Instant overview", tooltip: "Gain immediate insight into your counterparties. Efficiently track, manage, and store counterparties' information throughout their lifecycle." },
+              { text: "Public data integration", tooltip: "Seamlessly integrate public data sources and cross-reference them with counterparty information for a comprehensive view." },
+              { text: "People connections", tooltip: "Manage natural persons connected to entities. Easily add, remove, and oversee these connections." },
+              { text: "Affiliate connections", tooltip: "Enhance your understanding and mitigate risks by linking objects such as parent companies or shareholders to a counterparty." },
+              { text: "Manual data edit", tooltip: "Manually edit counterparty data as needed to ensure accuracy and completeness." },
+              { text: "Risk-level override", tooltip: "Exercise manual control over risk levels and override them when external events require adjustments. Maintain a clear timeline of risk-level changes." },
+              { text: "Support for all type of counterparties", tooltip: "Accommodate natural persons or entities, whether they are customers, investors, correspondents, or holding companies. Customise your views based on the type of counterparties you deal with." },
+              { text: "Document storage", tooltip: "Effortlessly upload, store, and manage documents. Eliminate the need for external document management systems and streamline your processes." },
+              { text: "Document connection", tooltip: "Associate documents with counterparties and related objects, ensuring that documents containing personal information are deleted when required." },
+              { text: "Safe counterparty communication", tooltip: "Communicate securely with counterparties within the system, eliminating the need to transmit sensitive data via email." },
+            ],
+          },
+        ],
+      },
     },
     value: {
       title: "One platform. The entire KYC process.",
+      hero: {
+        title: "One platform. The entire KYC process.",
+        desc: "A single platform for the full KYC process. Simplify for your organization, the responding party, and key individuals — with clear steps from collection to decision.",
+      },
       cards: [
         {
           title: "End-to-end KYC in one place",
@@ -297,13 +537,10 @@ export const translations: Record<string, any> = {
         },
       ],
     },
-    howItWorks: {
-      title: "Three steps to secure due diligence",
-      steps: [
-        { title: "Create a flow", desc: "Choose a template or build your own KYC flow with the controls you need." },
-        { title: "Collect data", desc: "Send to the counterparty and collect information securely — directly in the platform." },
-        { title: "Review & follow up", desc: "Make decisions, document, and stay on top with automatic monitoring." },
-      ],
+    whyWeStarted: {
+      title: "KYC is broken. We started KnownID out of frustration. As a lawyer I saw how much time was spent on manual processes, without the right tools to ensure everything was done the way the law requires. Regulatory compliance protects trust — it deserves structure and clarity. We decided to make it easier to do the right thing.",
+      name: "Martina Etemad",
+      role: "Co-founder",
     },
     insights: {
       title: "Insights",
@@ -340,6 +577,7 @@ export const translations: Record<string, any> = {
     industries: {
       title: "Industries",
       subtitle: "KYC requirements vary by industry. We adapt to your specific needs.",
+      floatingPills: ["Risk assessment", "Follow-up", "PEP screening", "Sanctions screening"],
       legal: {
         name: "Legal",
         short: "Law firms and legal advisors handle sensitive client relationships that require rigorous customer due diligence.",
@@ -356,6 +594,12 @@ export const translations: Record<string, any> = {
         ],
         caseTitle: "How a mid-size law firm halved its KYC time",
         caseText: "A firm with 45 lawyers moved from manual email handling to digital KYC flows. The result: 50% shorter processing time, happier clients, and a painless audit.",
+        insightsSectionTitle: "Insights",
+        insightCards: [
+          { pill: "Onboarding KYC", title: "Onboarding KYC", excerpt: "KYC for new client relationships and onboarding." },
+          { pill: "Monitoring KYC", title: "Monitoring KYC", excerpt: "Ongoing monitoring and updates." },
+          { pill: "Periodic KYC", title: "Periodic KYC", excerpt: "Periodic refresh of customer due diligence." },
+        ],
       },
       fintech: {
         name: "Fintech",
@@ -374,7 +618,7 @@ export const translations: Record<string, any> = {
         caseTitle: "A payment platform that scaled KYC without hiring more",
         caseText: "A fintech company with 200,000 users automated its KYC process and reduced manual processing by 70%, without compromising on regulatory requirements.",
       },
-      ma: {
+      other: {
         name: "M&A",
         short: "Transaction advisors need fast and reliable due diligence in time-pressured processes.",
         hero: "KYC for M&A",
@@ -393,7 +637,11 @@ export const translations: Record<string, any> = {
       },
     },
     about: {
+      heroHeading: "KnownID was founded after years of seeing how KYC processes were cumbersome and inadequate. Both from a user perspective and in terms of the requirements set by law.",
       title: "About KnownID",
+      taglineLine1: "KYC needs to be made easier.",
+      taglineLine2: "It doesn't need to be complex.",
+      taglineBody: "Nowadays KYC is everywhere. And it frustrates everyone. From the people working with it, to the persons answering on KYC questionnaires, to the people paying for it. Today, it's too complicated, too ineffective and too expensive. We need to change that.",
       story: "KnownID was founded with a simple insight: customer due diligence shouldn't be complicated. We build tools that make the KYC process transparent, secure, and smooth — for both you and your counterparties.",
       storyP2: "Our platform is built for teams that take compliance seriously but refuse to accept inefficient processes. We believe the right technology can turn regulatory compliance into a competitive advantage.",
       valuesTitle: "Our values",
@@ -404,6 +652,7 @@ export const translations: Record<string, any> = {
         { title: "Collaboration", desc: "KYC works best when all parties can contribute smoothly and securely." },
       ],
       teamTitle: "The team",
+      teamIntro: "Our team combines deep experience in compliance, technology, and regulated industries. We've built systems for banks, law firms, and fintech companies — and know what it takes to get customer due diligence right.",
       team: [
         { name: "Anna Lindqvist", role: "CEO & Founder" },
         { name: "Erik Johansson", role: "CTO" },

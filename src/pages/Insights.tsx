@@ -1,19 +1,11 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight } from "lucide-react";
+import { getInsightCoverSrc, getInsightPosts } from "@/lib/insights";
 
 const Insights = () => {
-  const { t } = useLanguage();
-
-  const posts = t("insights.posts") as unknown as Array<{
-    slug: string; category: string; title: string; excerpt: string; date: string;
-  }>;
-
-  const placeholderImages = [
-    "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=750&fit=crop",
-    "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=750&fit=crop",
-    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=750&fit=crop",
-  ];
+  const { t, lang } = useLanguage();
+  const posts = getInsightPosts(lang as "sv" | "en");
 
   return (
     <div className="bg-muted min-h-screen">
@@ -28,11 +20,11 @@ const Insights = () => {
                 to={`/insights/${post.slug}`}
                 className="group bg-card flex flex-col"
               >
-                <div className="aspect-square overflow-hidden">
+                <div className="relative isolate w-full aspect-square overflow-hidden bg-card">
                   <img
-                    src={placeholderImages[i % placeholderImages.length]}
+                    src={getInsightCoverSrc(post.slug, lang as "sv" | "en", i)}
                     alt={post.title}
-                    className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                    className="pointer-events-none absolute inset-0 size-full origin-center scale-[1.06] object-cover object-center grayscale opacity-70 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
                     loading="lazy"
                   />
                 </div>

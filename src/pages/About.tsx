@@ -10,22 +10,49 @@ const About = () => {
 
   return (
     <div>
-      {/* Section 1 — Vår idé */}
+      {/* Hero — left-aligned h1 only */}
       <section className="py-24 md:py-32">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-10 md:gap-20">
-            <h2 className="text-3xl md:text-4xl font-display leading-tight">
-              {t("about.title")}
-            </h2>
-            <div className="space-y-6">
-              <p className="text-base text-muted-foreground">{t("about.story")}</p>
-              <p className="text-base text-muted-foreground">{t("about.storyP2")}</p>
-            </div>
+          <h1 className="text-3xl md:text-4xl font-display leading-tight text-foreground max-w-3xl">
+            {t("about.heroHeading")}
+          </h1>
+        </div>
+      </section>
+
+      {/* Full-width light gray line */}
+      <div className="w-full h-px bg-border" />
+
+      {/* Tagline — centered, pill + two lines + body text */}
+      <section className="py-16 md:py-24">
+        <div className="container flex flex-col items-center text-center">
+          <Pill className="mb-6">Raison d&apos;être</Pill>
+          <p className="text-2xl md:text-3xl font-display leading-tight">
+            <span className="text-foreground">{t("about.taglineLine1")}</span>
+            <br />
+            <span className="text-muted-foreground">{t("about.taglineLine2")}</span>
+          </p>
+          <p className="mt-5 text-sm text-muted-foreground leading-relaxed max-w-2xl">
+            {t("about.taglineBody")}
+          </p>
+        </div>
+      </section>
+
+      {/* Image grid: TL 66%×50%, BL 33%×50%, BR-mid 33%×50%, R 33%×100% */}
+      <section className="py-12 md:py-16">
+        <div className="container">
+          <div
+            className="grid grid-cols-3 grid-rows-2 gap-4"
+            style={{ aspectRatio: "3/1.4", minHeight: "240px" }}
+          >
+            <div className="col-span-2 row-span-1 rounded-xl bg-accent/60 overflow-hidden" />
+            <div className="col-span-1 row-span-2 rounded-xl bg-accent/60 overflow-hidden" />
+            <div className="col-span-1 row-span-1 rounded-xl bg-accent/50 overflow-hidden" />
+            <div className="col-span-1 row-span-1 rounded-xl bg-accent/50 overflow-hidden" />
           </div>
         </div>
       </section>
 
-      {/* Section 2 — Värderingar */}
+      {/* Värderingar */}
       <section className="py-24 md:py-32">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-10 md:gap-20">
@@ -57,9 +84,7 @@ const About = () => {
                 {t("about.teamTitle")}
               </h2>
               <p className="text-base text-muted-foreground">
-                {lang === "sv"
-                  ? "Vårt team kombinerar djup erfarenhet inom compliance, teknik och reglerade branscher. Vi har byggt system för banker, advokatbyråer och fintechbolag — och vet vad som krävs för att göra kundkännedom rätt."
-                  : "Our team combines deep experience in compliance, technology, and regulated industries. We've built systems for banks, law firms, and fintech companies — and know what it takes to get customer due diligence right."}
+                {t("about.teamIntro")}
               </p>
 
               <div className="w-full h-px bg-border" />

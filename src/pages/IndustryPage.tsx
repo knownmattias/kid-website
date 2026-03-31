@@ -1,17 +1,34 @@
 import { useParams, Link } from "react-router-dom";
+import { useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
+import { useSectionReveal } from "@/hooks/use-section-reveal";
 import Pill from "@/components/Pill";
 import GeometricMotif from "@/components/GeometricMotif";
 import WireframeMesh from "@/components/WireframeMesh";
 import FloatingPills from "@/components/FloatingPills";
+import Lottie, { type LottieRefCurrentProps } from "lottie-react";
 import { Scale, MessageSquareQuote, ShieldCheck, Zap, BarChart3, Globe, Briefcase, Search, TrendingUp } from "lucide-react";
+import { HourglassLow, Chat, TrendUp, ArrowElbowDownRight } from "@phosphor-icons/react";
 import legalMeetingImg from "@/assets/legal-meeting.png";
-import type { LucideIcon } from "lucide-react";
+import onboardingKycAnimation from "@/assets/onboarding-kyc.json";
+import monitoringKycAnimation from "@/assets/monitoring-kyc.json";
+import periodicKycAnimation from "@/assets/periodic-kyc.json";
+import type { ComponentType } from "react";
+
+const RevealSection = ({ children, className = "", ...props }: React.HTMLAttributes<HTMLElement> & { children: React.ReactNode }) => {
+  const ref = useSectionReveal();
+  return (
+    <section ref={ref} className={`section-reveal ${className}`} {...props}>
+      {children}
+    </section>
+  );
+};
 
 type LangKey = "sv" | "en";
 
 interface ValueCard {
-  icon: LucideIcon;
+  icon: ComponentType<{ className?: string }>;
   title: string;
   desc: string;
 }
@@ -39,17 +56,17 @@ interface IndustryContent {
 
 const industryContent: Record<string, IndustryContent> = {
   legal: {
-    pill: { sv: "Precision", en: "Precision" },
-    heading: { sv: "En partner som förstår juridiken", en: "A partner that understands the law" },
+    pill: { sv: "Domänkunskap", en: "Precision" },
+    heading: { sv: "En partner som förstår ert arbete", en: "A partner that understands the law" },
     subheading: {
-      sv: "Vi bygger KYC-verktyg som utgår från juridikens behov: skräddarsytt, korrekt och utan kompromisser.",
+      sv: "Prata med någon som förstår vad ni arbetar med - vi har lång erfarenhet av arbete på advokatbyrå och förstår branschen väl.",
       en: "We build KYC tools grounded in legal needs: tailored, precise, and without compromise.",
     },
     valueCards: {
       sv: [
-        { icon: Scale, title: "Byggd för juridiska krav", desc: "Vi förstår advokatsamfundets riktlinjer och regulatoriska landskap — plattformen är utformad för att möta era specifika krav på kundkännedom." },
-        { icon: MessageSquareQuote, title: "Vi talar ert språk", desc: "Vår due diligence-process utgår från juridikens verklighet — komplexa ägarstrukturer, PEP-exponering och gränsöverskridande uppdrag." },
-        { icon: ShieldCheck, title: "Växer med er byrå", desc: "Oavsett om ni är fem eller femhundra jurister skalar plattformen med er, utan att kompromissa med kvalitet eller spårbarhet." },
+        { icon: HourglassLow, title: "Spendera mindre tid på KYC", desc: "Minska tiden som spenderas på KYC-hantering genom att automatisera dina arbetsflöden och genom att samla allt på samma plattform" },
+        { icon: Chat, title: "Vi talar ert språk", desc: "Vi förstår Advokatsamfundets krav och vet att kundkännedom kan vara svårt i juristbranschen, med många frågor som är unika för just er bransch." },
+        { icon: TrendUp, title: "Växer med er byrå", desc: "Oavsett om ni är fem eller femhundra jurister skalar plattformen med er, utan att kompromissa med kvalitet eller spårbarhet." },
       ],
       en: [
         { icon: Scale, title: "Built for legal requirements", desc: "We understand bar association guidelines and the regulatory landscape — the platform is designed to meet your specific KYC requirements." },
@@ -58,14 +75,14 @@ const industryContent: Record<string, IndustryContent> = {
       ],
     },
     testimonial: {
-      sv: { quote: "KnownID sticker ut på två sätt: deras förståelse för juridikens krav och deras djup i detaljerna. De granskade vår verksamhet som en rådgivare — för att se om det verkligen fungerar. Det gav oss trygghet.", name: "Maria Lindström", role: "Managing Partner, Advokatfirman Lindström" },
+      sv: { quote: "Som en juristbyrå kan det vara knepigt att förstå vilka ärenden som omfattas av PTL. KnownID gick igenom vår allmänna riskbedömning från grunden och satte upp en struktur för vilka ärende vi ska vidta kundkännedom. Det gav mig som styrelseordförande en trygghet i att vi inte exponerar oss för onödiga risker.", name: "Alireza", role: "Styrelseordförande, Juridium" },
       en: { quote: "KnownID stands out in two ways: their understanding of legal requirements and their depth in the details. They reviewed our practice as an advisor — to see if it really works. That gave us confidence.", name: "Maria Lindström", role: "Managing Partner, Lindström Law Firm" },
     },
     stats: {
       sv: [
-        { value: "97%", desc: "Upplever förbättrad kvalitet i sitt arbete" },
-        { value: "4+", desc: "Icke-fakturerbara timmar sparade per vecka" },
-        { value: "2,4M", desc: "Potentiell merdebitering per 100 jurister årligen" },
+        { value: "Snabbare", desc: "Minska tiden som spenderas på KYC-hantering genom att automatisera arbetsflöden" },
+        { value: "Säkrare", desc: "Hämta verifierad data och undvik osäker kommunikation över email"},
+        { value: "Enklare", desc: "Gör det enklare för dina mot parter att besvara KYC-förfrågningar" },
       ],
       en: [
         { value: "97%", desc: "Report an improvement in the quality of their work" },
@@ -112,7 +129,7 @@ const industryContent: Record<string, IndustryContent> = {
     },
     statsLabel: { sv: "KnownID för fintech", en: "KnownID for fintech" },
   },
-  ma: {
+  other: {
     pill: { sv: "Djup", en: "Depth" },
     heading: { sv: "Due diligence i en annan klass", en: "Due diligence in a class of its own" },
     subheading: {
@@ -156,7 +173,12 @@ const IndustryPage = () => {
   const { t, lang } = useLanguage();
   const l = lang as LangKey;
 
-  const validSlugs = ["legal", "fintech", "ma"];
+  const legalLottieRef0 = useRef<LottieRefCurrentProps | null>(null);
+  const legalLottieRef1 = useRef<LottieRefCurrentProps | null>(null);
+  const legalLottieRef2 = useRef<LottieRefCurrentProps | null>(null);
+  const legalLottieRefs = [legalLottieRef0, legalLottieRef1, legalLottieRef2];
+
+  const validSlugs = ["legal", "fintech", "other"];
   if (!slug || !validSlugs.includes(slug)) {
     return (
       <div className="py-20 container text-center">
@@ -169,6 +191,11 @@ const IndustryPage = () => {
   }
 
   const content = industryContent[slug];
+
+  const productSuite = t("index.productSuite") as unknown as {
+    title: string;
+    columns: Array<{ columnTitle: string; items: Array<{ text: string; tooltip: string }> }>;
+  };
 
   return (
     <>
@@ -213,7 +240,7 @@ const IndustryPage = () => {
       </section>
 
       {/* Value section */}
-      <section className="py-20 md:py-28">
+      <section className="py-28 md:py-36">
         <div className="container">
           <div className="mb-12">
             <Pill className="mb-6">{content.pill[l]}</Pill>
@@ -245,9 +272,12 @@ const IndustryPage = () => {
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {content.valueCards[l].map((card, i) => (
               <div key={i} className="space-y-3">
-                <card.icon className="w-5 h-5 text-muted-foreground" />
-                <h3 className="text-sm font-medium">{card.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
+                <card.icon
+                  className="w-6 h-6 text-black"
+                  {...(slug === "legal" ? { weight: "light" as const } : {})}
+                />
+                <h3 className="text-base md:text-lg font-medium">{card.title}</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">{card.desc}</p>
               </div>
             ))}
           </div>
@@ -257,7 +287,7 @@ const IndustryPage = () => {
       {/* Full-width image */}
       <div className="w-full">
         <img
-          src={legalMeetingImg}
+          src="/images/industries/legal-fullwidth.png"
           alt={`${slug} industry`}
           className="w-full h-[300px] md:h-[450px] object-cover"
           loading="lazy"
@@ -271,10 +301,13 @@ const IndustryPage = () => {
             <p className="text-xs uppercase tracking-widest text-muted-foreground">
               {content.statsLabel[l]}
             </p>
-            <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+            <div className="grid md:grid-cols-3 gap-5 md:gap-6">
               {content.stats[l].map((stat, i) => (
-                <div key={i}>
-                  <p className="text-4xl md:text-5xl font-display font-normal italic mb-2">{stat.value}</p>
+                <div
+                  key={i}
+                  className="border border-border rounded-xl p-6 md:p-8 space-y-2"
+                >
+                  <p className="text-3xl md:text-4xl font-display font-normal">{stat.value}</p>
                   <p className="text-sm text-muted-foreground leading-relaxed">{stat.desc}</p>
                 </div>
               ))}
@@ -285,21 +318,46 @@ const IndustryPage = () => {
 
       {/* Insights section */}
       {(() => {
-        const posts = t("insights.posts") as unknown as Array<{
-          slug: string; category: string; title: string; excerpt: string;
-        }>;
+        const cards = t("industries.legal.insightCards") as unknown as Array<{ pill: string; title: string; excerpt: string }>;
+        const animations = [onboardingKycAnimation, monitoringKycAnimation, periodicKycAnimation];
         return (
           <section className="py-24 md:py-32">
             <div className="container">
               <div className="flex items-end justify-between mb-12">
-                <h2>{t("insights.title")}</h2>
+                <h2>{t("industries.legal.insightsSectionTitle")}</h2>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-                {posts.slice(0, 4).map((post) => (
-                  <div key={post.slug} className="space-y-2">
-                    <div className="w-full aspect-[4/5] rounded-xl bg-accent/60 overflow-hidden" />
-                    <h3 className="text-lg font-display leading-snug">{post.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-snug">{post.excerpt}</p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {cards.map((card, i) => (
+                  <div key={i} className="flex flex-col gap-4">
+                    <div className="relative w-full aspect-[4/3] rounded-xl bg-accent/60 overflow-hidden flex items-center justify-center p-6 md:p-8">
+                      <Pill className="absolute top-3 left-3 z-10">
+                        {card.pill}
+                      </Pill>
+                      <div className="flex items-center justify-center w-[65%] h-[65%] max-w-[200px] max-h-[200px] opacity-90">
+                        {/* Render at 1.5x then scale down for sharper, less pixelated look */}
+                        <div className="w-[180px] h-[180px] overflow-hidden flex items-center justify-center shrink-0">
+                          <div style={{ width: 270, height: 270, transform: "scale(0.667)", transformOrigin: "center" }}>
+                            <Lottie
+                              animationData={animations[i]}
+                              loop
+                              lottieRef={legalLottieRefs[i]}
+                              onDOMLoaded={() => legalLottieRefs[i].current?.setSpeed(0.5)}
+                              renderer="svg"
+                              rendererSettings={{
+                                preserveAspectRatio: "xMidYMid meet",
+                                progressiveLoad: true,
+                              }}
+                              style={{ width: 270, height: 270 }}
+                              className="shrink-0"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-1">
+                      <h3 className="text-lg font-display leading-snug">{card.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-snug">{card.excerpt}</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -307,6 +365,44 @@ const IndustryPage = () => {
           </section>
         );
       })()}
+
+      {productSuite?.title && productSuite?.columns?.length === 4 && (
+        <RevealSection className="py-24 md:py-32 border-t border-border">
+          <div className="container">
+            <h2 className="mb-8">{productSuite.title}</h2>
+            <TooltipProvider delayDuration={150}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {productSuite.columns.map((col, colIndex) => (
+                  <div key={colIndex} className="space-y-3">
+                    <p className="text-base font-medium text-foreground">{col.columnTitle}</p>
+                    <ul className="space-y-2 list-none">
+                      {col.items.map((item, itemIndex) => (
+                        <li
+                          key={itemIndex}
+                          className="product-suite-row"
+                          style={{ transitionDelay: `${colIndex * 80 + itemIndex * 60}ms` }}
+                        >
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <span className="text-sm text-foreground cursor-help hover:text-primary transition-colors inline-flex items-center gap-1.5">
+                                <ArrowElbowDownRight size={16} className="shrink-0" />
+                                {item.text}
+                              </span>
+                            </TooltipTrigger>
+                            <TooltipContent side="top" className="max-w-xs rounded-[6px] border bg-background shadow-sm px-3 py-2 text-foreground">
+                              {item.tooltip}
+                            </TooltipContent>
+                          </Tooltip>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </TooltipProvider>
+          </div>
+        </RevealSection>
+      )}
     </>
   );
 };

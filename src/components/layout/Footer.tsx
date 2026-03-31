@@ -8,7 +8,7 @@ const Footer = () => {
   const { t, lang } = useLanguage();
   const ref = useSectionReveal();
 
-  const industryKeys = ["legal", "fintech", "ma"] as const;
+  const industryKeys = ["legal", "fintech", "other"] as const;
 
   return (
     <footer id="demo" ref={ref} className="section-reveal bg-background border-t border-border">
