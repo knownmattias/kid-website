@@ -1,7 +1,7 @@
 ---
 title: "12/12-regeln. Snart 3/12-regeln?"
 category: "AML-paketet"
-excerpt: "Enligt AMLA:s nya förslag, är det troligt att definition av en affärsförbindelse blir snävare framöver."
+excerpt: "Enligt AMLA:s nya förslag är det troligt att definition av en affärsförbindelse blir snävare framöver."
 date: "2026-03-23"
 ---
 

@@ -41,7 +41,7 @@ export const translations: Record<string, unknown> = {
     },
     index: {
       cardLabels: ["Reglerade företag", "Den som svarar", "Nyckelpersoner"],
-      heroLegal: { pill: "Jurist- och advokatbyråer", title: "För advokat- och juristbyråer" },
+      heroLegal: { pill: "Advokat- och juristbyråer", title: "För advokater och jurister" },
       heroFintech: { pill: "Reglerade bolag", title: "Plattform anpassad till er bransch" },
       explore: "Utforska",
       productPlaceholder: {
@@ -51,7 +51,7 @@ export const translations: Record<string, unknown> = {
       platform: {
         pill: "Plattformen",
         title: "Byggd för flexibilitet och regelefterlevnad",
-        desc: "En robust och flexibel arkitektur som säkerställer att varje steg i KYC-processen görs enligt lagkrav, men samtidig är smidig och enkel.",
+        desc: "En robust och flexibel arkitektur som säkerställer att varje steg i KYC-processen görs enligt lagkrav, samtidigt som den är smidig och enkel.",
         features: [
           { title: "Strukturerad information", desc: "Sammankoppla, organisera och spara komplex kundinformation i en tydlig, enhetlig struktur." },
           { title: "Standardiserade mallar", desc: "Använd och anpassa kundkännedomsmallar som är mappade mot EU:s regelverk just för er bransch."},
@@ -145,7 +145,7 @@ export const translations: Record<string, unknown> = {
       title: "En plattform. Hela KYC-processen.",
       hero: {
         title: "En plattform. Hela KYC-processen.",
-        desc: "En plattform för hela KYC-processen. Förenkla för er organisation, den som svarar och nyckelpersoner hos motparten, så som verklig huvudman. Tydliga steg genom hela processen för att göra enklare för alla.",
+        desc: "En plattform för hela KYC-processen. Förenkla för er organisation, för den som svarar och för den som svaran handlar om. Tydliga steg genom hela processen för att göra det enklare för alla.",
       },
       cards: [
         {
@@ -167,7 +167,7 @@ export const translations: Record<string, unknown> = {
       ],
     },
     whyWeStarted: {
-      title: "KYC är trasigt. Vi startade KnownID i frustration. Som jurist såg jag hur orimligt mycket tid som lades på manuella processer, utan rätt verktyg för att säkerställa att allt gjordes på det sätt lagen kräver. Kundkännedom handlar om förtroende och förtjänar struktur och tydlighet. Vi bestämde oss för att göra det enklare att göra rätt.",
+      title: "Vi startade KnownID i frustration. Som jurist såg jag hur orimligt mycket tid som lades på manuella processer, utan rätt verktyg för att säkerställa att allt gjordes på det sätt lagen kräver. Kundkännedom bygger på förtroende och förtjänar struktur och tydlighet. Vi bestämde oss för att göra det enklare att göra rätt.",
       name: "Martina Etemad",
       role: "Medgrundare",
     },
@@ -209,7 +209,7 @@ export const translations: Record<string, unknown> = {
       floatingPills: ["riskbedömning", "uppföljning", "PEP-screening", "sanktionscreening"],
       legal: {
         name: "Juridik",
-        short: "Vi vet hur snårigt det är att navigera kundkännedom för juristbyråer. Vilka ärenden omfattas? Är det en affärsförbindelse? Vi hjälper er på traven.",
+        short: "Vi vet hur snårigt det är att navigera kundkännedom för advokater och jurister. Vilka ärenden omfattas? När blir en klientrelation en affärsförbindelse? Vi hjälper er på traven.",
         hero: "KYC för jurister och advokater",
         pains: [
           "Komplexa ägarstrukturer och svåridentifierade UBO:er",
@@ -225,14 +225,14 @@ export const translations: Record<string, unknown> = {
         caseText: "En byrå med 45 jurister gick från manuell e-posthantering till digitala KYC-flöden. Resultatet: 50 % kortare handläggningstid, nöjdare klienter och en revision som gick smärtfritt.",
         insightsSectionTitle: "KYC genom hela livscykeln",
         insightCards: [
-          { pill: "Onboarding KYC", title: "Enklare onboarding", excerpt: "Onboarda dina motparter digitalt med hjälp av färdiga frågeformulär. Samla in och verifiera information mot offentliga register. Gör riskbedömning i samma plattform." },
-          { pill: "Monitoring KYC", title: "Var trygg. 24/7", excerpt: "Övervaka kontinuerligt dina motparter. Automatisk screening mot PEP, sanktioner och adverse media i realtid. Bli aviserad vid förändringar i nyckeldata. Hantera utredningar." },
+          { pill: "Onboarding KYC", title: "Enklare onboarding", excerpt: "Onboarda era klienter digitalt med hjälp av färdiga frågeformulär. Samla in och verifiera information mot offentliga register. Gör riskbedömning i samma plattform." },
+          { pill: "Monitoring KYC", title: "Var trygg. 24/7", excerpt: "Övervaka kontinuerligt era klienter. Automatisk screening mot PEP, sanktioner och adverse media i realtid. Bli aviserad vid förändringar i nyckeldata. Hantera utredningar." },
           { pill: "Periodisk KYC", title: "Periodisk granskning", excerpt: "Schemalägg och skicka automatiskt ut periodiska granskningar baserat på aktuell risknivå. Analysera och förstå förändringar i motpartens profil." },
         ],
       },
       fintech: {
         name: "Fintech",
-        short: "Väx utan att skala bromsa utan att bromsa produktutvecklingen. Säkerställ att du du samlar in KYC:n för samtliga flöden.",
+        short: "Väx utan att bromsa produktutvecklingen. Säkerställ att ni samlar in KYC för samtliga flöden.",
         hero: "KYC för fintech",
         pains: [
           "Höga volymer av onboardingar som kräver snabb handläggning",
@@ -271,6 +271,7 @@ export const translations: Record<string, unknown> = {
       taglineLine1: "KYC ska vara enkelt.",
       taglineLine2: "Det behöver inte vara komplicerat.",
       taglineBody: "Idag är KYC överallt. Och det frustrerar alla. Från dem som arbetar med det, till dem som ska svara på KYC-frågor, till dem som betalar för det. Idag är det för komplicerat, för ineffektivt och för dyrt. Det behöver förändras.",
+      mosaicPortraitAlt: "Porträtt av en medgrundare till KnownID",
       story: "KnownID grundades med en enkel insikt: kundkännedom borde inte vara krångligt. Vi bygger verktyg som gör KYC-processen transparent, säker och smidig — för både er och era motparter.",
       storyP2: "Vår plattform är byggd för team som tar compliance på allvar men som vägrar acceptera ineffektiva processer. Vi tror att rätt teknologi kan göra regelefterlevnad till en konkurrensfördel.",
       valuesTitle: "Våra värderingar",
@@ -642,6 +643,7 @@ export const translations: Record<string, unknown> = {
       taglineLine1: "KYC needs to be made easier.",
       taglineLine2: "It doesn't need to be complex.",
       taglineBody: "Nowadays KYC is everywhere. And it frustrates everyone. From the people working with it, to the persons answering on KYC questionnaires, to the people paying for it. Today, it's too complicated, too ineffective and too expensive. We need to change that.",
+      mosaicPortraitAlt: "Portrait of a KnownID co-founder",
       story: "KnownID was founded with a simple insight: customer due diligence shouldn't be complicated. We build tools that make the KYC process transparent, secure, and smooth — for both you and your counterparties.",
       storyP2: "Our platform is built for teams that take compliance seriously but refuse to accept inefficient processes. We believe the right technology can turn regulatory compliance into a competitive advantage.",
       valuesTitle: "Our values",

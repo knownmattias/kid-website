@@ -45,7 +45,13 @@ const About = () => {
             style={{ aspectRatio: "3/1.4", minHeight: "240px" }}
           >
             <div className="col-span-2 row-span-1 rounded-xl bg-accent/60 overflow-hidden" />
-            <div className="col-span-1 row-span-2 rounded-xl bg-accent/60 overflow-hidden" />
+            <div className="col-span-1 row-span-2 rounded-xl bg-accent/60 overflow-hidden">
+              <img
+                src="/images/about-founder.png"
+                alt={t("about.mosaicPortraitAlt")}
+                className="h-full w-full object-cover object-left"
+              />
+            </div>
             <div className="col-span-1 row-span-1 rounded-xl bg-accent/50 overflow-hidden" />
             <div className="col-span-1 row-span-1 rounded-xl bg-accent/50 overflow-hidden" />
           </div>

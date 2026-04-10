@@ -64,8 +64,8 @@ const industryContent: Record<string, IndustryContent> = {
     },
     valueCards: {
       sv: [
-        { icon: HourglassLow, title: "Spendera mindre tid på KYC", desc: "Minska tiden som spenderas på KYC-hantering genom att automatisera dina arbetsflöden och genom att samla allt på samma plattform" },
-        { icon: Chat, title: "Vi talar ert språk", desc: "Vi förstår Advokatsamfundets krav och vet att kundkännedom kan vara svårt i juristbranschen, med många frågor som är unika för just er bransch." },
+        { icon: HourglassLow, title: "Spendera mindre tid på KYC", desc: "Minska tiden som spenderas på KYC-hantering genom att automatisera era arbetsflöden och genom att samla allt på samma plattform" },
+        { icon: Chat, title: "Vi talar ert språk", desc: "Vi förstår Advokatsamfundets krav och vet att kundkännedom kan vara svårt i advokatbranschen, med många frågor som är unika för just er bransch." },
         { icon: TrendUp, title: "Växer med er byrå", desc: "Oavsett om ni är fem eller femhundra jurister skalar plattformen med er, utan att kompromissa med kvalitet eller spårbarhet." },
       ],
       en: [
@@ -82,7 +82,7 @@ const industryContent: Record<string, IndustryContent> = {
       sv: [
         { value: "Snabbare", desc: "Minska tiden som spenderas på KYC-hantering genom att automatisera arbetsflöden" },
         { value: "Säkrare", desc: "Hämta verifierad data och undvik osäker kommunikation över email"},
-        { value: "Enklare", desc: "Gör det enklare för dina mot parter att besvara KYC-förfrågningar" },
+        { value: "Enklare", desc: "Gör det enklare för era klienter att besvara KYC-förfrågningar" },
       ],
       en: [
         { value: "97%", desc: "Report an improvement in the quality of their work" },
